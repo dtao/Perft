@@ -1,0 +1,8 @@
+%section.machine
+  %h1= @machine.name
+
+  .properties
+    .description= @machine.description
+    .api-key= @machine.api_key
+
+  = link_to("Back", "/")

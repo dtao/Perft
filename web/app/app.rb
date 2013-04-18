@@ -47,6 +47,12 @@ module Perft
     #   end
     #
 
+    get "/" do
+      @projects = Project.all
+      @machines = Machine.all
+      render :index
+    end
+
     ##
     # You can manage errors like:
     #
