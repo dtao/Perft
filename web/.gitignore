@@ -1,0 +1,7 @@
+.env
+
+.sass-cache/
+log/
+tmp/
+
+db/*.db

@@ -1,0 +1,9 @@
+---
+:orm: datamapper
+:test: none
+:mock: none
+:script: none
+:renderer: haml
+:stylesheet: sass
+:namespace: Perft
+:migration_format: number
