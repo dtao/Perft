@@ -11,6 +11,7 @@ gem 'foreman'
 gem 'rake'
 
 # Component requirements
+gem 'randy'
 gem 'sass'
 gem 'haml'
 gem 'dm-sqlite-adapter'
