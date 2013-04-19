@@ -16,7 +16,7 @@ The web service. Will figure out some standard API to submit performance test re
 
 The front end will have all sorts of awesome charts and graphs.
 
-### perft-ruby
+### RPerft
 
 A Ruby gem to integrate w/ RSpec (?) and shoot up results to the web service. I'm thinking:
 
