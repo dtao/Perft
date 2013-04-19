@@ -9,4 +9,19 @@ Perft::App.controllers :projects do
     flash[:notice] = "Created project '#{project.name}'"
     redirect("/")
   end
+
+  post "/:id/:test_suite_name" do |id, test_suite_name|
+    auth = Rack::Auth::Basic::Request.new(request.env)
+    raise "Not authorized" unless auth.provided? && auth.basic? && auth.credentials
+
+    machine_id, api_key = auth.credentials
+    machine = Machine.get(machine_id.to_i)
+    raise "Not authorized" if machine.nil? || api_key != machine.api_key
+
+    project    = Project.get(id.to_i)
+    test_suite = project.performance_test_suites.first(:name => test_suite_name)
+
+    results = JSON.parse(params["results"])
+    test_suite.process_client_results(results, machine)
+  end
 end

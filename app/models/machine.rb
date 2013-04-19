@@ -1,6 +1,8 @@
 class Machine
   include DataMapper::Resource
 
+  has n, :performance_test_suite_runs
+
   property :id,          Serial
   property :name,        String
   property :description, String

@@ -22,6 +22,7 @@ gem 'dm-constraints'
 gem 'dm-aggregates'
 gem 'dm-types'
 gem 'dm-core'
+gem 'dm-noisy-failures'
 
 # Test requirements
 
