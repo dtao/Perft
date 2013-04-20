@@ -5,7 +5,7 @@ Perft::App.controllers :projects do
   end
 
   post "/create" do
-    project = Project.create(:name => params[:name])
+    project = Project.create(:name => params["name"])
     flash[:notice] = "Created project '#{project.name}'"
     redirect("/")
   end

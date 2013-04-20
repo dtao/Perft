@@ -18,6 +18,8 @@
   - form_tag("/machines/create") do
     - field_set_tag("Machine Name") do
       = text_field_tag(:name)
+    - field_set_tag("Description") do
+      = text_field_tag(:description)
     = submit_tag("Create")
 
 %section.machines

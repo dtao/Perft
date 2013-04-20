@@ -5,7 +5,10 @@ Perft::App.controllers :machines do
   end
 
   post "/create" do
-    machine = Machine.create(:name => params[:name])
+    machine = Machine.create({
+      :name => params["name"],
+      :description => params["description"]
+    })
     flash[:notice] = "Created machine '#{machine.name}'"
     redirect("/")
   end
