@@ -1,0 +1,12 @@
+.performance-test-runs {
+  display: table;
+  border-collapse: collapse; }
+  .performance-test-runs li {
+    display: table-row; }
+    .performance-test-runs li:nth-child(even) {
+      background-color: #eeeeee; }
+    .performance-test-runs li:hover {
+      background-color: #ffffee; }
+    .performance-test-runs li div {
+      display: table-cell;
+      padding: 5px; }
