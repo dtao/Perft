@@ -22,40 +22,38 @@ a {
   padding-left: 0; }
 
 .performance-test-suite-runs {
-  display: table;
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  display: table; }
+  .performance-test-suite-runs a:nth-child(even) {
+    background-color: #eeeeee; }
+  .performance-test-suite-runs a:hover {
+    background-color: #ffffee; }
+  .performance-test-suite-runs a div {
+    padding: 5px; }
   .performance-test-suite-runs a {
     display: table-row; }
-    .performance-test-suite-runs a:nth-child(even) {
-      background-color: #eeeeee; }
-    .performance-test-suite-runs a:hover {
-      background-color: #ffffee; }
     .performance-test-suite-runs a div {
-      display: table-cell;
-      padding: 5px; }
+      display: table-cell; }
 
 .test-runs {
-  display: table;
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  display: table; }
+  .test-runs li:nth-child(even) {
+    background-color: #eeeeee; }
+  .test-runs li:hover {
+    background-color: #ffffee; }
+  .test-runs li div {
+    padding: 5px; }
   .test-runs li {
     display: table-row; }
-    .test-runs li:nth-child(even) {
-      background-color: #eeeeee; }
-    .test-runs li:hover {
-      background-color: #ffffee; }
     .test-runs li div {
-      display: table-cell;
-      padding: 5px; }
+      display: table-cell; }
 
 .performance-test-runs {
-  display: table;
   border-collapse: collapse; }
-  .performance-test-runs li {
-    display: table-row; }
-    .performance-test-runs li:nth-child(even) {
-      background-color: #eeeeee; }
-    .performance-test-runs li:hover {
-      background-color: #ffffee; }
-    .performance-test-runs li div {
-      display: table-cell;
-      padding: 5px; }
+  .performance-test-runs tr:nth-child(even) {
+    background-color: #eeeeee; }
+  .performance-test-runs tr:hover {
+    background-color: #ffffee; }
+  .performance-test-runs tr td {
+    padding: 5px; }

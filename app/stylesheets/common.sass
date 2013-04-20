@@ -1,16 +1,26 @@
-@mixin tabular($recordType)
-  display: table
+@mixin tabularBase($recordType, $cellType)
   border-collapse: collapse
 
   #{$recordType}
-    display: table-row
     &:nth-child(even)
       background-color: #eee
     &:hover
       background-color: #ffe
+    #{$cellType}
+      padding: 5px
+
+@mixin table
+  @include tabularBase(tr, td)
+
+@mixin tabular($recordType)
+  @include tabularBase($recordType, div)
+
+  display: table
+
+  #{$recordType}
+    display: table-row
     div
       display: table-cell
-      padding: 5px
 
 @mixin plainList
   list-style: none

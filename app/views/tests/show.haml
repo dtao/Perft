@@ -3,11 +3,16 @@
 
   %h2= @test.performance_test_suite.name
 
-  %ol.performance-test-runs
-    - @test.performance_test_runs(:order => [:id.desc]).each do |run|
-      %li
-        .date= format_date(run.created_at)
-        .time= format_time(run.created_at)
-        .elapsed_seconds= run.elapsed_seconds
+  %table.performance-test-runs.render-to-line-chart(data-value-columns="2")
+    %tr
+      %th Date
+      %th Time
+      %th Elapsed Seconds
+
+    - @test.performance_test_runs(:order => [:id.asc]).each do |run|
+      %tr
+        %td.date= format_date(run.created_at)
+        %td.time= format_time(run.created_at)
+        %td.elapsed_seconds= run.elapsed_seconds
 
   = link_to "Back", "/"
