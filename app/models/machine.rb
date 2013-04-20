@@ -4,7 +4,7 @@ class Machine
   has n, :performance_test_suite_runs
 
   property :id,          Serial
-  property :name,        String
+  property :name,        String, :required => true
   property :description, String
   property :api_key,     String
   property :created_at,  DateTime

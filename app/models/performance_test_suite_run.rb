@@ -6,8 +6,8 @@ class PerformanceTestSuiteRun
   has n, :performance_test_runs
 
   property :id,                        Serial
-  property :machine_id,                Integer
-  property :performance_test_suite_id, Integer
+  property :machine_id,                Integer, :required => true
+  property :performance_test_suite_id, Integer, :required => true
   property :created_at,                DateTime
   property :updated_at,                DateTime
 
