@@ -10,4 +10,8 @@ class PerformanceTestSuiteRun
   property :performance_test_suite_id, Integer
   property :created_at,                DateTime
   property :updated_at,                DateTime
+
+  def total_elapsed_seconds
+    self.performance_test_runs.sum(:elapsed_seconds)
+  end
 end

@@ -1,0 +1,11 @@
+%section.performance-test-suite
+  %h1= @suite.name
+
+  %ol.performance-test-suite-runs
+    - @suite.performance_test_suite_runs(:order => [:id.desc]).each do |run|
+      %li
+        .date= format_date(run.created_at)
+        .time= format_time(run.created_at)
+        .elapsed_seconds= run.total_elapsed_seconds
+
+  = link_to "Back", "/"

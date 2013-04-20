@@ -4,3 +4,16 @@ body {
 
 h1 {
   font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+
+.performance-test-suite-runs {
+  display: table;
+  border-collapse: collapse; }
+  .performance-test-suite-runs li {
+    display: table-row; }
+    .performance-test-suite-runs li:nth-child(even) {
+      background-color: #eeeeee; }
+    .performance-test-suite-runs li:hover {
+      background-color: #ffffee; }
+    .performance-test-suite-runs li div {
+      display: table-cell;
+      padding: 5px; }

@@ -19,9 +19,7 @@ Perft::App.controllers :projects do
     raise "Not authorized" if machine.nil? || api_key != machine.api_key
 
     project    = Project.get(id.to_i)
-    test_suite = project.performance_test_suites.first(:name => test_suite_name)
-
-    results = JSON.parse(params["results"])
-    test_suite.process_client_results(results, machine)
+    test_suite = project.performance_test_suites.first_or_create(:name => CGI.unescape(test_suite_name))
+    test_suite.process_client_results(params["results"], machine)
   end
 end

@@ -1,0 +1,13 @@
+@mixin tabular($recordType)
+  display: table
+  border-collapse: collapse
+
+  #{$recordType}
+    display: table-row
+    &:nth-child(even)
+      background-color: #eee
+    &:hover
+      background-color: #ffe
+    div
+      display: table-cell
+      padding: 5px

@@ -6,6 +6,7 @@ module Perft
     register Padrino::Helpers
 
     enable :sessions
+    disable :protect_from_csrf
 
     ##
     # Caching support

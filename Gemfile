@@ -11,9 +11,10 @@ gem 'foreman'
 gem 'rake'
 
 # Component requirements
-gem 'randy'
+gem 'json'
 gem 'sass'
 gem 'haml'
+gem 'randy'
 gem 'dm-sqlite-adapter'
 gem 'dm-validations'
 gem 'dm-timestamps'
@@ -22,6 +23,7 @@ gem 'dm-constraints'
 gem 'dm-aggregates'
 gem 'dm-types'
 gem 'dm-core'
+gem 'dm-transactions'
 gem 'dm-noisy-failures'
 
 # Test requirements
