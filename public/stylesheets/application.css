@@ -2,8 +2,24 @@ body {
   width: 960px;
   margin: auto; }
 
-h1 {
+h1, h2 {
   font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+
+a {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #556677;
+  text-decoration: none; }
+  a:hover {
+    color: #aabbcc; }
+
+.projects,
+.machines {
+  list-style: none;
+  padding-left: 0; }
+
+.performance-test-suites {
+  list-style: none;
+  padding-left: 0; }
 
 .performance-test-suite-runs {
   display: table;
@@ -28,5 +44,18 @@ h1 {
     .test-runs li:hover {
       background-color: #ffffee; }
     .test-runs li div {
+      display: table-cell;
+      padding: 5px; }
+
+.performance-test-runs {
+  display: table;
+  border-collapse: collapse; }
+  .performance-test-runs li {
+    display: table-row; }
+    .performance-test-runs li:nth-child(even) {
+      background-color: #eeeeee; }
+    .performance-test-runs li:hover {
+      background-color: #ffffee; }
+    .performance-test-runs li div {
       display: table-cell;
       padding: 5px; }

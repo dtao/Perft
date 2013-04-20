@@ -4,7 +4,19 @@ body
   width: 960px
   margin: auto
 
-h1
-  font-family: "Open Sans", Helvetica, Arial, sans-serif
+h1, h2
+  @include simpleFont
 
+a
+  @include simpleFont
+
+  color: #567
+  text-decoration: none
+
+  &:hover
+    color: #abc
+
+@import "index"
+@import "projects"
 @import "suites"
+@import "tests"
