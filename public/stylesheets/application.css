@@ -8,12 +8,25 @@ h1 {
 .performance-test-suite-runs {
   display: table;
   border-collapse: collapse; }
-  .performance-test-suite-runs li {
+  .performance-test-suite-runs a {
     display: table-row; }
-    .performance-test-suite-runs li:nth-child(even) {
+    .performance-test-suite-runs a:nth-child(even) {
       background-color: #eeeeee; }
-    .performance-test-suite-runs li:hover {
+    .performance-test-suite-runs a:hover {
       background-color: #ffffee; }
-    .performance-test-suite-runs li div {
+    .performance-test-suite-runs a div {
+      display: table-cell;
+      padding: 5px; }
+
+.test-runs {
+  display: table;
+  border-collapse: collapse; }
+  .test-runs li {
+    display: table-row; }
+    .test-runs li:nth-child(even) {
+      background-color: #eeeeee; }
+    .test-runs li:hover {
+      background-color: #ffffee; }
+    .test-runs li div {
       display: table-cell;
       padding: 5px; }

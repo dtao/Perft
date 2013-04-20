@@ -4,7 +4,10 @@ Syntax error: Undefined mixin 'tabular'.
         from line 2 of /Users/dantao/Projects/Perft/app/stylesheets/suites.sass
 
 1: .performance-test-suite-runs
-2:   @include tabular(li)
+2:   @include tabular(a)
+3: 
+4: .test-runs
+5:   @include tabular(li)
 
 Backtrace:
 /Users/dantao/Projects/Perft/app/stylesheets/suites.sass:2:in `tabular'
@@ -84,4 +87,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'tabular'.\A         on line 2 of /Users/dantao/Projects/Perft/app/stylesheets/suites.sass, in `tabular'\A         from line 2 of /Users/dantao/Projects/Perft/app/stylesheets/suites.sass\A \A 1: .performance-test-suite-runs\A 2:   @include tabular(li)"; }
+  content: "Syntax error: Undefined mixin 'tabular'.\A         on line 2 of /Users/dantao/Projects/Perft/app/stylesheets/suites.sass, in `tabular'\A         from line 2 of /Users/dantao/Projects/Perft/app/stylesheets/suites.sass\A \A 1: .performance-test-suite-runs\A 2:   @include tabular(a)\A 3: \A 4: .test-runs\A 5:   @include tabular(li)"; }
