@@ -4,6 +4,7 @@
   .performance-test-suite-runs
     - @suite.performance_test_suite_runs(:order => [:id.desc]).each do |run|
       %a(href="/suites/#{@suite.id}/#{run.id}")
+        .day= format_day(run.created_at)
         .date= format_date(run.created_at)
         .time= format_time(run.created_at)
         .elapsed_seconds= run.total_elapsed_seconds
