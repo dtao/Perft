@@ -8,6 +8,7 @@ class PerformanceTestSuiteRun
   property :id,                        Serial
   property :machine_id,                Integer, :required => true
   property :performance_test_suite_id, Integer, :required => true
+  property :comment,                   String
   property :created_at,                DateTime
   property :updated_at,                DateTime
 

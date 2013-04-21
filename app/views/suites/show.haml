@@ -7,5 +7,6 @@
         .date= format_date(run.created_at)
         .time= format_time(run.created_at)
         .elapsed_seconds= run.total_elapsed_seconds
+        .comment= run.comment
 
   = link_to "Back", "/"
