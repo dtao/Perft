@@ -3,13 +3,13 @@
 
   %h2= @test.performance_test_suite.name
 
-  %table.performance-test-runs.render-to-line-chart(data-value-columns="2")
+  %table.performance-test-runs.render-to-line-chart(data-value-columns="2" data-order="descending")
     %tr
       %th Date
       %th Time
       %th Elapsed Seconds
 
-    - @test.performance_test_runs(:order => [:id.asc]).each do |run|
+    - @test.performance_test_runs(:order => [:id.desc]).each do |run|
       %tr
         %td.date= format_date(run.created_at)
         %td.time= format_time(run.created_at)
