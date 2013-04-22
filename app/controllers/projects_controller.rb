@@ -20,6 +20,6 @@ Perft::App.controllers :projects do
 
     project    = Project.get(id.to_i)
     test_suite = project.performance_test_suites.first_or_create(:name => CGI.unescape(test_suite_name))
-    test_suite.process_client_results(params["results"], machine, params["comment"])
+    test_suite.process_client_results(params["changeset"], params["results"], machine, params["comment"])
   end
 end

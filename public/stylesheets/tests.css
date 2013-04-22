@@ -6,3 +6,8 @@
     background-color: #ffffee; }
   .performance-test-runs tr td {
     padding: 5px; }
+
+.changeset {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
