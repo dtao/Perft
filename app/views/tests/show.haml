@@ -5,9 +5,9 @@
 
   %table.performance-test-runs.render-to-line-chart(data-value-columns="2" data-order="descending")
     %tr
-      %th Date
-      %th Time
-      %th Elapsed Seconds
+      %th.date Date
+      %th.time Time
+      %th.elapsed_seconds Elapsed Seconds
 
     - @test.performance_test_runs(:order => [:id.desc]).each do |run|
       %tr
@@ -15,4 +15,4 @@
         %td.time= format_time(run.created_at)
         %td.elapsed_seconds= run.elapsed_seconds
 
-  = link_to "Back", "/"
+  .actions= link_to("Back", "/suites/#{@test.performance_test_suite_id}/latest")

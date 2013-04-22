@@ -15,15 +15,17 @@ a
   &:hover
     color: #abc
 
-fieldset
-  border-radius: 25px
-  padding: 25px
-
 label, input
   display: block
 
+input[type="checkbox"]
+  display: inline
+
+label
+  font-weight: bold
+
 input
-  font-size: 150%
+  font-size: 125%
 
 .field:nth-child(n+2)
   margin-top: 10px
@@ -38,7 +40,15 @@ input[type="text"]
 input[type="submit"]
   margin-top: 10px
 
+.actions
+  margin-top: 25px
+
+  a
+    display: inline-block
+    margin-right: 10px
+
 @import "index"
 @import "projects"
+@import "machines"
 @import "suites"
 @import "tests"

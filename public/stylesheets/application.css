@@ -12,15 +12,17 @@ a {
   a:hover {
     color: #aabbcc; }
 
-fieldset {
-  border-radius: 25px;
-  padding: 25px; }
-
 label, input {
   display: block; }
 
+input[type="checkbox"] {
+  display: inline; }
+
+label {
+  font-weight: bold; }
+
 input {
-  font-size: 150%; }
+  font-size: 125%; }
 
 .field:nth-child(n+2) {
   margin-top: 10px; }
@@ -38,6 +40,12 @@ input[type="text"] {
 input[type="submit"] {
   margin-top: 10px; }
 
+.actions {
+  margin-top: 25px; }
+  .actions a {
+    display: inline-block;
+    margin-right: 10px; }
+
 .tabs {
   list-style: none;
   padding-left: 0;
@@ -51,7 +59,8 @@ input[type="submit"] {
     padding: 10px; }
     .tabs a.selected {
       border: 1px solid black;
-      border-bottom: 1px solid white; }
+      border-bottom: 1px solid white;
+      color: black; }
   .tabs ~ section {
     display: none; }
     .tabs ~ section.displayed {
@@ -85,6 +94,16 @@ input[type="submit"] {
     .performance-test-suites li:hover {
       background-color: aliceblue; }
 
+.properties div:before {
+  content: attr(class);
+  display: block;
+  font-weight: bold; }
+
+.run-date,
+.run-time {
+  color: #888888;
+  font-size: 75%; }
+
 .performance-test-suite-runs {
   border-collapse: collapse;
   display: table; }
@@ -101,23 +120,43 @@ input[type="submit"] {
 
 .test-runs {
   border-collapse: collapse;
-  display: table; }
-  .test-runs li:nth-child(even) {
+  width: 100%; }
+  .test-runs tr:nth-child(even) {
     background-color: #eeeeee; }
-  .test-runs li:hover {
+  .test-runs tr:hover {
     background-color: #ffffee; }
-  .test-runs li div {
+  .test-runs tr td {
     padding: 5px; }
-  .test-runs li {
-    display: table-row; }
-    .test-runs li div {
-      display: table-cell; }
+  .test-runs tr:first-child {
+    border-bottom: 1px solid black; }
+    .test-runs tr:first-child:hover {
+      background-color: white; }
+  .test-runs th {
+    text-align: left; }
+  .test-runs input[type="checkbox"] {
+    position: relative;
+    top: 4px; }
 
 .performance-test-runs {
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  width: 100%; }
   .performance-test-runs tr:nth-child(even) {
     background-color: #eeeeee; }
   .performance-test-runs tr:hover {
     background-color: #ffffee; }
   .performance-test-runs tr td {
     padding: 5px; }
+  .performance-test-runs tr:first-child {
+    border-bottom: 1px solid black; }
+    .performance-test-runs tr:first-child:hover {
+      background-color: white; }
+  .performance-test-runs th {
+    text-align: left; }
+
+.changeset {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.elapsed_seconds {
+  text-align: right !important; }

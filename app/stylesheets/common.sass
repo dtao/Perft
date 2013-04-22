@@ -11,6 +11,14 @@
 
 @mixin table
   @include tabularBase(tr, td)
+  width: 100%
+
+  tr:first-child
+    border-bottom: 1px solid black
+    &:hover
+      background-color: white
+  th
+    text-align: left
 
 @mixin tabular($recordType)
   @include tabularBase($recordType, div)

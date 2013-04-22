@@ -11,7 +11,8 @@
     padding: 10px; }
     .tabs a.selected {
       border: 1px solid black;
-      border-bottom: 1px solid white; }
+      border-bottom: 1px solid white;
+      color: black; }
   .tabs ~ section {
     display: none; }
     .tabs ~ section.displayed {

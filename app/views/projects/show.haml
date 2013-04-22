@@ -5,4 +5,4 @@
     - @project.performance_test_suites(:order => [:name.asc]).each do |suite|
       %li= link_to suite.name, "/suites/#{suite.id}"
 
-  = link_to("Back", "/")
+  .actions= link_to("Back", "/")

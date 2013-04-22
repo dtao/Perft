@@ -1,0 +1,4 @@
+.properties div:before {
+  content: attr(class);
+  display: block;
+  font-weight: bold; }
