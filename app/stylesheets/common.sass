@@ -26,5 +26,29 @@
   list-style: none
   padding-left: 0
 
+@mixin fancyList
+  @include plainList
+
+  font-size: 125%
+  font-weight: bold
+
+  li
+    padding: 10px
+
+    &:nth-child(even)
+      background-color: #f8f8f8
+
+    &:hover
+      background-color: #f0f8ff
+
+@mixin borderBox
+  box-sizing: border-box
+  -moz-box-sizing: border-box
+  -o-box-sizing: border-box
+  -webkit-boz-sizing: border-box
+
 @mixin simpleFont
   font-family: "Open Sans", Helvetica, Arial, sans-serif
+
+@mixin headingFont
+  font-family: "Roboto Condensed", sans-serif

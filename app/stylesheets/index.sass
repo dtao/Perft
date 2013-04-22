@@ -1,5 +1,28 @@
 @import "common"
 
+.tabs
+  @include plainList
+  border-bottom: 1px solid black
+
+  li
+    display: inline-block
+    margin-bottom: -1px
+
+  a
+    display: inline-block
+    font-size: 125%
+    padding: 10px
+
+    &.selected
+      border: 1px solid black
+      border-bottom: 1px solid white
+
+  &~section
+    display: none
+
+    &.displayed
+      display: block
+
 .projects,
 .machines
-  @include plainList
+  @include fancyList

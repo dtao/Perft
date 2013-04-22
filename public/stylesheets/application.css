@@ -1,25 +1,89 @@
 body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   width: 960px;
   margin: auto; }
 
 h1, h2 {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+  font-family: "Roboto Condensed", sans-serif; }
 
 a {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   color: #556677;
   text-decoration: none; }
   a:hover {
     color: #aabbcc; }
 
+fieldset {
+  border-radius: 25px;
+  padding: 25px; }
+
+label, input {
+  display: block; }
+
+input {
+  font-size: 150%; }
+
+.field:nth-child(n+2) {
+  margin-top: 10px; }
+
+input[type="text"] {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-boz-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: none; }
+
+input[type="submit"] {
+  margin-top: 10px; }
+
+.tabs {
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 1px solid black; }
+  .tabs li {
+    display: inline-block;
+    margin-bottom: -1px; }
+  .tabs a {
+    display: inline-block;
+    font-size: 125%;
+    padding: 10px; }
+    .tabs a.selected {
+      border: 1px solid black;
+      border-bottom: 1px solid white; }
+  .tabs ~ section {
+    display: none; }
+    .tabs ~ section.displayed {
+      display: block; }
+
 .projects,
 .machines {
   list-style: none;
-  padding-left: 0; }
+  padding-left: 0;
+  font-size: 125%;
+  font-weight: bold; }
+  .projects li,
+  .machines li {
+    padding: 10px; }
+    .projects li:nth-child(even),
+    .machines li:nth-child(even) {
+      background-color: #f8f8f8; }
+    .projects li:hover,
+    .machines li:hover {
+      background-color: aliceblue; }
 
 .performance-test-suites {
   list-style: none;
-  padding-left: 0; }
+  padding-left: 0;
+  font-size: 125%;
+  font-weight: bold; }
+  .performance-test-suites li {
+    padding: 10px; }
+    .performance-test-suites li:nth-child(even) {
+      background-color: #f8f8f8; }
+    .performance-test-suites li:hover {
+      background-color: aliceblue; }
 
 .performance-test-suite-runs {
   border-collapse: collapse;

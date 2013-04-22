@@ -1,20 +1,42 @@
 @import "common"
 
 body
+  @include simpleFont
   width: 960px
   margin: auto
 
 h1, h2
-  @include simpleFont
+  @include headingFont
 
 a
-  @include simpleFont
-
   color: #567
   text-decoration: none
 
   &:hover
     color: #abc
+
+fieldset
+  border-radius: 25px
+  padding: 25px
+
+label, input
+  display: block
+
+input
+  font-size: 150%
+
+.field:nth-child(n+2)
+  margin-top: 10px
+
+input[type="text"]
+  @include borderBox
+  width: 100%
+  padding: 10px
+  border-radius: 10px
+  box-shadow: none
+
+input[type="submit"]
+  margin-top: 10px
 
 @import "index"
 @import "projects"

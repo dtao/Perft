@@ -1,4 +1,34 @@
+.tabs {
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 1px solid black; }
+  .tabs li {
+    display: inline-block;
+    margin-bottom: -1px; }
+  .tabs a {
+    display: inline-block;
+    font-size: 125%;
+    padding: 10px; }
+    .tabs a.selected {
+      border: 1px solid black;
+      border-bottom: 1px solid white; }
+  .tabs ~ section {
+    display: none; }
+    .tabs ~ section.displayed {
+      display: block; }
+
 .projects,
 .machines {
   list-style: none;
-  padding-left: 0; }
+  padding-left: 0;
+  font-size: 125%;
+  font-weight: bold; }
+  .projects li,
+  .machines li {
+    padding: 10px; }
+    .projects li:nth-child(even),
+    .machines li:nth-child(even) {
+      background-color: #f8f8f8; }
+    .projects li:hover,
+    .machines li:hover {
+      background-color: aliceblue; }
