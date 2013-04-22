@@ -1,0 +1,16 @@
+%section.performance-test
+  %h1= @tests.map(&:name).join(" vs. ")
+
+  %table.performance-test-runs.render-to-spline-chart(data-order="descending")
+    %tr
+      %th Changeset
+      - @tests.each do |test|
+        %th.elapsed_seconds= test.name
+
+    - @suite.performance_test_suite_runs(:order => [:id.desc]).each do |suite_run|
+      %tr
+        %td.changeset= "#{suite_run.changeset} - #{suite_run.comment}"
+        - @tests.each do |test|
+          %td.elapsed_seconds= suite_run.performance_test_runs.first(:performance_test_id => test.id).try(:elapsed_seconds)
+
+  .actions= link_to("Back", "/suites/#{@suite.id}/latest")

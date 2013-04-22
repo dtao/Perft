@@ -1,15 +1,26 @@
 %section.performance-test-run
   %h1
-    .suite-name= @suite.name
-    .run-date= format_date(@suite_run.created_at)
-    .run-time= format_time(@suite_run.created_at)
+    %span.suite-name= @suite.name
+    %span.run-date= format_date(@suite_run.created_at)
+    %span.run-time= format_time(@suite_run.created_at)
 
-  %ol.test-runs
-    - @suite_run.performance_test_runs(:order => [:elapsed_seconds.desc]).each do |test_run|
-      %li
-        .name= link_to(test_run.performance_test.name, "/tests/#{test_run.performance_test.id}")
-        .date= format_date(test_run.created_at)
-        .time= format_time(test_run.created_at)
-        .elapsed_seconds= test_run.elapsed_seconds
+  - form_tag("/tests/compare") do
+    %table.test-runs.render-to-bar-chart(data-value-columns="4")
+      %tr
+        %th Test
+        %th Date
+        %th Time
+        %th Elapsed Seconds
 
-  = link_to "Back", "/suites/#{@suite.id}"
+      - @suite_run.performance_test_runs(:order => [:elapsed_seconds.desc]).each do |test_run|
+        %tr
+          %td.name
+            = check_box_tag(:"include[]", :value => test_run.performance_test_id)
+            = link_to(test_run.performance_test.name, "/tests/#{test_run.performance_test_id}")
+          %td.date= format_date(test_run.created_at)
+          %td.time= format_time(test_run.created_at)
+          %td.elapsed_seconds= test_run.elapsed_seconds
+
+    = submit_tag("Compare")
+
+  .actions= link_to("Back", "/suites/#{@suite.id}")

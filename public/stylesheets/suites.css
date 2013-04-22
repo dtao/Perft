@@ -1,3 +1,8 @@
+.run-date,
+.run-time {
+  color: #888888;
+  font-size: 75%; }
+
 .performance-test-suite-runs {
   border-collapse: collapse;
   display: table; }
@@ -14,14 +19,19 @@
 
 .test-runs {
   border-collapse: collapse;
-  display: table; }
-  .test-runs li:nth-child(even) {
+  width: 100%; }
+  .test-runs tr:nth-child(even) {
     background-color: #eeeeee; }
-  .test-runs li:hover {
+  .test-runs tr:hover {
     background-color: #ffffee; }
-  .test-runs li div {
+  .test-runs tr td {
     padding: 5px; }
-  .test-runs li {
-    display: table-row; }
-    .test-runs li div {
-      display: table-cell; }
+  .test-runs tr:first-child {
+    border-bottom: 1px solid black; }
+    .test-runs tr:first-child:hover {
+      background-color: white; }
+  .test-runs th {
+    text-align: left; }
+  .test-runs input[type="checkbox"] {
+    position: relative;
+    top: 4px; }

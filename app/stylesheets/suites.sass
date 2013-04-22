@@ -1,7 +1,16 @@
 @import "common"
 
+.run-date,
+.run-time
+  color: #888
+  font-size: 75%
+
 .performance-test-suite-runs
   @include tabular(a)
 
 .test-runs
-  @include tabular(li)
+  @include table
+
+  input[type="checkbox"]
+    position: relative
+    top: 4px
