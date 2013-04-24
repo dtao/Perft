@@ -1,7 +1,11 @@
 Perft::App.controllers :suites do
   get "/:id" do |id|
     @suite = PerformanceTestSuite.get(id.to_i)
-    @tests = @suite.performance_tests
+    @suite_runs = @suite.performance_test_suite_runs(:order => [:id.desc])
+
+    # Hack alert! Don't show the 'HEAD' run if it isn't the most recent.
+    @suite_runs.reject!(&:wip?) unless @suite_runs.first.try(:wip?)
+
     render :"suites/show"
   end
 

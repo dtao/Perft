@@ -16,4 +16,8 @@ class PerformanceTestSuiteRun
   def total_elapsed_seconds
     self.performance_test_runs.sum(:elapsed_seconds)
   end
+
+  def wip?
+    self.changeset.nil?
+  end
 end
