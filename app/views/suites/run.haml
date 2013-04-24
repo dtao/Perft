@@ -12,7 +12,7 @@
         %th Time
         %th Elapsed Seconds
 
-      - @suite_run.performance_test_runs(:order => [:elapsed_seconds.desc]).each do |test_run|
+      - @suite_run.performance_test_runs(:order => [:performance_test_id.asc]).each do |test_run|
         %tr
           %td.name
             = check_box_tag(:"include[]", :value => test_run.performance_test_id)

@@ -8,6 +8,7 @@
         .date= format_date(run.created_at)
         .time= format_time(run.created_at)
         .elapsed_seconds= run.total_elapsed_seconds
+        .changeset= run.changeset
         .comment= run.comment
 
   .actions= link_to("Back", "/")
