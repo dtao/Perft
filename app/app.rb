@@ -17,7 +17,11 @@ module Perft
 
     helpers do
       def logged_in?
-        !!session[:uid]
+        !!session[:user_id]
+      end
+
+      def current_user
+        @current_user ||= User.get(session[:user_id])
       end
 
       def auth_hash
@@ -42,8 +46,9 @@ module Perft
     end
 
     get "/auth/:provider/callback" do |provider|
-      session[:uid] = auth_hash["uid"]
-      flash[:notice] = "Welcome, #{auth_user_info['name']}!"
+      user = User.get_or_create(provider, auth_hash["uid"], auth_user_info)
+      session[:user_id] = user.id
+      flash[:notice] = "Welcome, #{user.name}!"
       redirect("/")
     end
 
