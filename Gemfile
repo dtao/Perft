@@ -1,32 +1,34 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 # Server requirements
-gem 'thin'
+gem "thin"
 
 # Optional JSON codec (faster performance)
-# gem 'oj'
+# gem "oj"
 
 # Project requirements
-gem 'foreman'
-gem 'rake'
+gem "foreman"
+gem "rake"
 
 # Component requirements
-gem 'json'
-gem 'sass'
-gem 'haml'
-gem 'randy'
-gem 'dm-sqlite-adapter'
-gem 'dm-validations'
-gem 'dm-timestamps'
-gem 'dm-migrations'
-gem 'dm-constraints'
-gem 'dm-aggregates'
-gem 'dm-types'
-gem 'dm-core'
-gem 'dm-transactions'
-gem 'dm-noisy-failures'
+gem "json"
+gem "sass"
+gem "haml"
+gem "randy"
+gem "dm-sqlite-adapter"
+gem "dm-validations"
+gem "dm-timestamps"
+gem "dm-migrations"
+gem "dm-constraints"
+gem "dm-aggregates"
+gem "dm-types"
+gem "dm-core"
+gem "dm-transactions"
+gem "dm-noisy-failures"
+gem "omniauth"
+gem "omniauth-github"
 
 # Test requirements
 
 # Padrino Stable Gem
-gem 'padrino', '0.11.1'
+gem "padrino", "0.11.1"

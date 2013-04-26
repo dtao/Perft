@@ -17,4 +17,10 @@
       - if flash[:notice]
         .notice= flash[:notice]
 
+    %section.session
+      - if logged_in?
+        = link_to("Log out", "/logout")
+      - else
+        = link_to("Log in", "/auth/github")
+
     = yield
