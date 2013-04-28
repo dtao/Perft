@@ -19,6 +19,7 @@
 
     %section.session
       - if logged_in?
+        = h("Logged in as #{current_user.name}.")
         = link_to("Log out", "/logout")
       - else
         = link_to("Log in", "/auth/github")
