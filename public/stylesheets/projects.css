@@ -4,8 +4,10 @@
   font-size: 125%;
   font-weight: bold; }
   .performance-test-suites li {
+    border-left: 3px solid #aabbcc;
     padding: 10px; }
     .performance-test-suites li:nth-child(even) {
       background-color: #f8f8f8; }
     .performance-test-suites li:hover {
-      background-color: aliceblue; }
+      background-color: aliceblue;
+      border-left: 3px solid lightslategrey; }

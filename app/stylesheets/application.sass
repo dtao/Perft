@@ -32,10 +32,14 @@ input
 
 input[type="text"]
   @include borderBox
+  background-color: #eee
+  border: none
+  border-left: 3px solid #abc
   width: 100%
   padding: 10px
-  border-radius: 10px
-  box-shadow: none
+
+  &:focus
+    background-color: #def
 
 input[type="submit"]
   margin-top: 10px

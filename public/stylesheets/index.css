@@ -26,10 +26,12 @@
   font-weight: bold; }
   .projects li,
   .machines li {
+    border-left: 3px solid #aabbcc;
     padding: 10px; }
     .projects li:nth-child(even),
     .machines li:nth-child(even) {
       background-color: #f8f8f8; }
     .projects li:hover,
     .machines li:hover {
-      background-color: aliceblue; }
+      background-color: aliceblue;
+      border-left: 3px solid lightslategrey; }

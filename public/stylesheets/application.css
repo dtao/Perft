@@ -32,10 +32,13 @@ input[type="text"] {
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   -webkit-boz-sizing: border-box;
+  background-color: #eeeeee;
+  border: none;
+  border-left: 3px solid #aabbcc;
   width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: none; }
+  padding: 10px; }
+  input[type="text"]:focus {
+    background-color: #ddeeff; }
 
 input[type="submit"] {
   margin-top: 10px; }
@@ -74,13 +77,15 @@ input[type="submit"] {
   font-weight: bold; }
   .projects li,
   .machines li {
+    border-left: 3px solid #aabbcc;
     padding: 10px; }
     .projects li:nth-child(even),
     .machines li:nth-child(even) {
       background-color: #f8f8f8; }
     .projects li:hover,
     .machines li:hover {
-      background-color: aliceblue; }
+      background-color: aliceblue;
+      border-left: 3px solid lightslategrey; }
 
 .performance-test-suites {
   list-style: none;
@@ -88,11 +93,13 @@ input[type="submit"] {
   font-size: 125%;
   font-weight: bold; }
   .performance-test-suites li {
+    border-left: 3px solid #aabbcc;
     padding: 10px; }
     .performance-test-suites li:nth-child(even) {
       background-color: #f8f8f8; }
     .performance-test-suites li:hover {
-      background-color: aliceblue; }
+      background-color: aliceblue;
+      border-left: 3px solid lightslategrey; }
 
 .properties div:before {
   content: attr(class);
