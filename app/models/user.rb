@@ -21,7 +21,7 @@ class User
     end
 
     if identity.user.nil?
-      identity.update(:user => User.create(:primary_identity => identity))
+      identity.update(:user => User.create(:primary_identity_id => identity.id))
     end
 
     identity.user
