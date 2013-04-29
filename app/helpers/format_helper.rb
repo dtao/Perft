@@ -10,4 +10,8 @@ Perft::App.helpers do
   def format_time(datetime)
     datetime ? datetime.strftime("%r") : ""
   end
+
+  def format_decimal(decimal)
+    decimal ? "%0.3f" % decimal : ""
+  end
 end
