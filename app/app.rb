@@ -31,13 +31,20 @@ module Perft
       def auth_user_info
         @auth_user_info ||= auth_hash["info"]
       end
+
+      def authenticate
+        auth = Rack::Auth::Basic::Request.new(request.env)
+        return auth if auth.present?
+
+        if !logged_in? && request.path !~ %r{^/(?:logout)?$|^/auth/}
+          flash[:notice] = "You must log in to continue."
+          redirect("/")
+        end
+      end
     end
 
     before do
-      if !logged_in? && request.path !~ %r{^/(?:logout)?$|^/auth/}
-        flash[:notice] = "You must log in to continue."
-        redirect("/")
-      end
+      authenticate
     end
 
     get "/" do
