@@ -3,7 +3,7 @@ $(document).ready(function() {
     var $link   = $(this);
     var $target = $($link.attr("href")).hide();
     $link.click(function() {
-      $target.show();
+      $target.show().find("input[type='text']:first").focus();
       return false;
     });
   });
