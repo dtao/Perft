@@ -113,17 +113,19 @@ input[type="submit"] {
 
 .performance-test-suite-runs {
   border-collapse: collapse;
-  display: table; }
-  .performance-test-suite-runs a:nth-child(even) {
+  width: 100%; }
+  .performance-test-suite-runs tr:nth-child(even) {
     background-color: #eeeeee; }
-  .performance-test-suite-runs a:hover {
+  .performance-test-suite-runs tr:hover {
     background-color: #ffffee; }
-  .performance-test-suite-runs a div {
+  .performance-test-suite-runs tr td {
     padding: 5px; }
-  .performance-test-suite-runs a {
-    display: table-row; }
-    .performance-test-suite-runs a div {
-      display: table-cell; }
+  .performance-test-suite-runs tr:first-child {
+    border-bottom: 1px solid black; }
+    .performance-test-suite-runs tr:first-child:hover {
+      background-color: white; }
+  .performance-test-suite-runs th {
+    text-align: left; }
   .performance-test-suite-runs .date,
   .performance-test-suite-runs .time {
     white-space: nowrap; }
