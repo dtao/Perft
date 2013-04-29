@@ -1,10 +1,90 @@
+GIT
+  remote: git://github.com/datamapper/dm-aggregates.git
+  revision: 278042a49310baf42f18fac85a574e7c88923669
+  branch: release-1.2
+  specs:
+    dm-aggregates (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: git://github.com/datamapper/dm-constraints.git
+  revision: 754f0b45d4eaafd5a9f7a2014d88a2b5c97e4dcb
+  branch: release-1.2
+  specs:
+    dm-constraints (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: git://github.com/datamapper/dm-core.git
+  revision: 9224447f73ff861a0870135564d1aa5df37b6eaa
+  branch: release-1.2
+  specs:
+    dm-core (1.2.1)
+      addressable (~> 2.3.3)
+
+GIT
+  remote: git://github.com/datamapper/dm-migrations.git
+  revision: 28bb3b0c3005773ad09e9ee82cf8d45f93a9ec48
+  branch: release-1.2
+  specs:
+    dm-migrations (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: git://github.com/datamapper/dm-sqlite-adapter.git
+  revision: 04c13a60531de09c9f0d0803182fe5dc4379704f
+  branch: release-1.2
+  specs:
+    dm-sqlite-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_sqlite3 (~> 0.10.6)
+
+GIT
+  remote: git://github.com/datamapper/dm-timestamps.git
+  revision: 1d3e199632c8e97a964f843786a7039e3398f135
+  branch: release-1.2
+  specs:
+    dm-timestamps (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: git://github.com/datamapper/dm-transactions.git
+  revision: 4f702a940e51b70b3a0250ef7f0b655554331340
+  branch: release-1.2
+  specs:
+    dm-transactions (1.2.0)
+      dm-core (~> 1.2.0)
+
+GIT
+  remote: git://github.com/datamapper/dm-types.git
+  revision: 613cc5698874bb7a55603e196e1923157e96df08
+  branch: release-1.2
+  specs:
+    dm-types (1.2.2)
+      bcrypt-ruby (~> 3.0)
+      dm-core (~> 1.2.0)
+      fastercsv (~> 1.5)
+      json (~> 1.6)
+      multi_json (~> 1.0)
+      safe_yaml (~> 0.6.1)
+      stringex (~> 1.4)
+      uuidtools (~> 2.1)
+
+GIT
+  remote: git://github.com/datamapper/dm-validations.git
+  revision: b6542e79bb2ea022241ee8cf1e861153824ffda4
+  branch: release-1.2
+  specs:
+    dm-validations (1.2.0)
+      dm-core (~> 1.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    addressable (2.2.8)
+    addressable (2.3.4)
     bcrypt-ruby (3.0.1)
     daemons (1.1.9)
     data_mapper (1.2.0)
@@ -19,16 +99,8 @@ GEM
       dm-validations (~> 1.2.0)
     data_objects (0.10.12)
       addressable (~> 2.1)
-    dm-aggregates (1.2.0)
-      dm-core (~> 1.2.0)
-    dm-constraints (1.2.0)
-      dm-core (~> 1.2.0)
-    dm-core (1.2.0)
-      addressable (~> 2.2.6)
     dm-do-adapter (1.2.0)
       data_objects (~> 0.10.6)
-      dm-core (~> 1.2.0)
-    dm-migrations (1.2.0)
       dm-core (~> 1.2.0)
     dm-noisy-failures (0.2.1)
       data_mapper
@@ -38,23 +110,6 @@ GEM
       json (~> 1.6)
       json_pure (~> 1.6)
       multi_json (~> 1.0)
-    dm-sqlite-adapter (1.2.0)
-      dm-do-adapter (~> 1.2.0)
-      do_sqlite3 (~> 0.10.6)
-    dm-timestamps (1.2.0)
-      dm-core (~> 1.2.0)
-    dm-transactions (1.2.0)
-      dm-core (~> 1.2.0)
-    dm-types (1.2.2)
-      bcrypt-ruby (~> 3.0)
-      dm-core (~> 1.2.0)
-      fastercsv (~> 1.5)
-      json (~> 1.6)
-      multi_json (~> 1.0)
-      stringex (~> 1.4)
-      uuidtools (~> 2.1)
-    dm-validations (1.2.0)
-      dm-core (~> 1.2.0)
     do_sqlite3 (0.10.12)
       data_objects (= 0.10.12)
     dotenv (0.7.0)
@@ -81,7 +136,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.22)
+    mime-types (1.23)
     multi_json (1.7.2)
     multipart-post (1.2.0)
     oauth2 (0.8.1)
@@ -134,7 +189,8 @@ GEM
       rack
     rake (10.0.4)
     randy (0.0.1)
-    sass (3.2.7)
+    safe_yaml (0.6.3)
+    sass (3.2.8)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -151,22 +207,22 @@ GEM
       polyglot (>= 0.3.1)
     url_mount (0.2.1)
       rack
-    uuidtools (2.1.3)
+    uuidtools (2.1.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  dm-aggregates
-  dm-constraints
-  dm-core
-  dm-migrations
+  dm-aggregates!
+  dm-constraints!
+  dm-core!
+  dm-migrations!
   dm-noisy-failures
-  dm-sqlite-adapter
-  dm-timestamps
-  dm-transactions
-  dm-types
-  dm-validations
+  dm-sqlite-adapter!
+  dm-timestamps!
+  dm-transactions!
+  dm-types!
+  dm-validations!
   foreman
   haml
   json

@@ -10,20 +10,26 @@ gem "thin"
 gem "foreman"
 gem "rake"
 
+# DB requirements
+[
+  "dm-sqlite-adapter",
+  "dm-validations",
+  "dm-timestamps",
+  "dm-migrations",
+  "dm-constraints",
+  "dm-aggregates",
+  "dm-types",
+  "dm-core",
+  "dm-transactions"
+].each do |data_mapper_gem|
+  gem data_mapper_gem, :git => "git://github.com/datamapper/#{data_mapper_gem}.git", :branch => "release-1.2"
+end
+
 # Component requirements
 gem "json"
 gem "sass"
 gem "haml"
 gem "randy"
-gem "dm-sqlite-adapter"
-gem "dm-validations"
-gem "dm-timestamps"
-gem "dm-migrations"
-gem "dm-constraints"
-gem "dm-aggregates"
-gem "dm-types"
-gem "dm-core"
-gem "dm-transactions"
 gem "dm-noisy-failures"
 gem "omniauth"
 gem "omniauth-github"
