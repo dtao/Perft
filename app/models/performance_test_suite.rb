@@ -24,7 +24,7 @@ class PerformanceTestSuite
       })
 
       if test_suite_run.present?
-        test_suite_run.performance_test_runs.destroy
+        test_suite_run.performance_test_runs.destroy!
         test_suite_run.destroy
       end
 
