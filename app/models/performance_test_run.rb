@@ -11,4 +11,8 @@ class PerformanceTestRun
   property :elapsed_seconds,               Float,   :required => true
   property :created_at,                    DateTime
   property :updated_at,                    DateTime
+
+  def wip?
+    self.performance_test_suite_run.changeset.blank?
+  end
 end

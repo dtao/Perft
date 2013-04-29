@@ -16,4 +16,11 @@ $(document).ready(function() {
     $($link.attr("href")).addClass("displayed");
     return false;
   });
+
+  $("textarea.changes").each(function() {
+    CodeMirror.fromTextArea(this, {
+      mode: "text/x-diff",
+      readOnly: true
+    });
+  });
 });

@@ -167,3 +167,7 @@ input[type="submit"] {
 
 .elapsed_seconds {
   text-align: right !important; }
+
+.CodeMirror {
+  border-top: 1px solid black;
+  margin: 24px auto; }

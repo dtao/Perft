@@ -11,7 +11,12 @@ class PerformanceTestSuite
   property :created_at, DateTime
   property :updated_at, DateTime
 
-  def process_client_results(changeset, results, machine, comment)
+  def process_client_results(data, machine)
+    results   = data["results"]
+    changeset = data["changeset"]
+    comment   = data["comment"]
+    changes   = data["changes"]
+
     self.transaction do
       test_suite_run = self.performance_test_suite_runs.first({
         :machine   => machine,
@@ -26,7 +31,8 @@ class PerformanceTestSuite
       test_suite_run = self.performance_test_suite_runs.create({
         :machine   => machine,
         :changeset => changeset,
-        :comment   => comment
+        :comment   => comment,
+        :changes   => changes
       })
 
       results.each do |result|
