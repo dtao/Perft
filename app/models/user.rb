@@ -3,6 +3,8 @@ class User
 
   has n, :identities
   has 1, :primary_identity, "Identity"
+  has n, :projects
+  has n, :machines
 
   property :id,                  Serial
   property :primary_identity_id, Integer, :required => true

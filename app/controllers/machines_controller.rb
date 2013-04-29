@@ -5,7 +5,7 @@ Perft::App.controllers :machines do
   end
 
   post "/create" do
-    machine = Machine.create({
+    machine = current_user.machines.create({
       :name => params["name"],
       :description => params["description"]
     })

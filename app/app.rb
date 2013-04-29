@@ -17,7 +17,7 @@ module Perft
 
     helpers do
       def logged_in?
-        !!session[:user_id]
+        !!current_user
       end
 
       def current_user
@@ -33,14 +33,21 @@ module Perft
       end
     end
 
+    before do
+      if !logged_in? && request.path !~ %r{^/(?:logout)?$|^/auth/}
+        flash[:notice] = "You must log in to continue."
+        redirect("/")
+      end
+    end
+
     get "/" do
-      @projects = Project.all
-      @machines = Machine.all
+      @projects = current_user.try(:projects) || []
+      @machines = current_user.try(:machines) || []
       render :index
     end
 
     get "/logout" do
-      session.delete(:uid)
+      session.delete(:user_id)
       flash[:notice] = "You've successfully logged out."
       redirect("/")
     end
@@ -51,17 +58,5 @@ module Perft
       flash[:notice] = "Welcome, #{user.name}!"
       redirect("/")
     end
-
-    ##
-    # You can manage errors like:
-    #
-    #   error 404 do
-    #     render 'errors/404'
-    #   end
-    #
-    #   error 505 do
-    #     render 'errors/505'
-    #   end
-    #
   end
 end
