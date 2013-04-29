@@ -7,7 +7,7 @@
         .day= format_day(run.created_at)
         .date= format_date(run.created_at)
         .time= format_time(run.created_at)
-        .elapsed_seconds= run.total_elapsed_seconds
+        .elapsed_seconds= format_decimal(run.total_elapsed_seconds)
         .changeset= run.changeset
         .comment= run.comment
 
