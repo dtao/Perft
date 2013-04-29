@@ -8,6 +8,15 @@
 .performance-test-suite-runs
   @include tabular(a)
 
+  .date,
+  .time
+    white-space: nowrap
+
+  .comment
+    white-space: nowrap
+    overflow-x: hidden
+    text-overflow: ellipsis
+
 .test-runs
   @include table
 

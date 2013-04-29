@@ -16,6 +16,13 @@
     display: table-row; }
     .performance-test-suite-runs a div {
       display: table-cell; }
+  .performance-test-suite-runs .date,
+  .performance-test-suite-runs .time {
+    white-space: nowrap; }
+  .performance-test-suite-runs .comment {
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis; }
 
 .test-runs {
   border-collapse: collapse;
