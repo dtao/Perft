@@ -19,7 +19,7 @@
             = link_to(test_run.performance_test.name, "/tests/#{test_run.performance_test_id}")
           %td.date= format_date(test_run.created_at)
           %td.time= format_time(test_run.created_at)
-          %td.elapsed_seconds= test_run.elapsed_seconds
+          %td.elapsed_seconds= test_run.elapsed_seconds.round(3)
 
     = submit_tag("Compare")
 
