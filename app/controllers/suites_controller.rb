@@ -14,6 +14,7 @@ Perft::App.controllers :suites do
     @suite_run = run_id == "latest" ?
       @suite.performance_test_suite_runs.first(:order => [:id.desc]) :
       @suite.performance_test_suite_runs.get(run_id.to_i)
+    @test_runs = @suite_run.performance_test_runs(:order => [:elapsed_seconds.desc])
     render :"suites/run"
   end
 end

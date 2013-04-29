@@ -5,14 +5,14 @@
     %span.run-time= format_time(@suite_run.created_at)
 
   - form_tag("/tests/compare") do
-    %table.test-runs.render-to-bar-chart(data-value-columns="4")
+    %table.test-runs.render-to-pie-chart
       %tr
         %th Test
         %th Date
         %th Time
         %th Elapsed Seconds
 
-      - @suite_run.performance_test_runs(:order => [:performance_test_id.asc]).each do |test_run|
+      - @test_runs.each do |test_run|
         %tr
           %td.name
             = check_box_tag(:"include[]", :value => test_run.performance_test_id)
