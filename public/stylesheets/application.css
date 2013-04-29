@@ -167,13 +167,17 @@ input[type="submit"] {
   .performance-test-runs th {
     text-align: left; }
 
-.changeset {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
 .elapsed_seconds {
   text-align: right !important; }
+
+.date,
+.time {
+  white-space: nowrap; }
+
+.changeset {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis; }
 
 .CodeMirror {
   border-top: 1px solid black;

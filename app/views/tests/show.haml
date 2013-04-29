@@ -3,19 +3,19 @@
 
   %h2= @test.performance_test_suite.name
 
-  %table.performance-test-runs.render-to-line-chart(data-value-columns="2" data-order="descending")
+  %table.performance-test-runs.render-to-line-chart(data-value-columns="3" data-order="descending")
     %tr
+      %th.changeset Changeset
       %th.date Date
       %th.time Time
       %th.elapsed_seconds Elapsed Seconds
-      %th.comment Comment
 
     - @test_runs.each do |run|
       %tr
+        %td.comment= "#{run.performance_test_suite_run.changeset}: #{run.performance_test_suite_run.comment}"
         %td.date= format_date(run.created_at)
         %td.time= format_time(run.created_at)
         %td.elapsed_seconds= format_decimal(run.elapsed_seconds)
-        %td.comment= run.performance_test_suite_run.comment
 
   .actions= link_to("Back", "/suites/#{@test.performance_test_suite_id}/latest")
 
