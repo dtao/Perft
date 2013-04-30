@@ -182,5 +182,10 @@ input[type="submit"] {
   text-overflow: ellipsis; }
 
 .CodeMirror {
+  height: auto;
   border-top: 1px solid black;
   margin: 24px auto; }
+
+.CodeMirror-scroll {
+  overflow-x: auto;
+  overflow-y: hidden; }

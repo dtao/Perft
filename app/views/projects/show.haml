@@ -1,8 +1,17 @@
 %section.project
   %h1= @project.name
 
-  %ol.performance-test-suites
-    - @project.performance_test_suites(:order => [:name.asc]).each do |suite|
-      %li= link_to suite.name, "/suites/#{suite.id}"
+  - if @test_suites.any?
+    %ol.performance-test-suites
+      - @test_suites.each do |suite|
+        %li= link_to suite.name, "/suites/#{suite.id}"
+  - else
+    %p Create a <strong>.perft-config</strong> file with the following content to get started:
+    %textarea.code(data-mode="yaml")
+      :preserve
+        host: https://perft.herokuapp.com
+        project: #{@project.id}
+        machine: #{@machine.try(:id)}
+        api_key: #{@machine.try(:api_key)}
 
   .actions= link_to("Back", "/")

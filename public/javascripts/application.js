@@ -17,10 +17,11 @@ $(document).ready(function() {
     return false;
   });
 
-  $("textarea.changes").each(function() {
+  $("textarea.code").each(function() {
     CodeMirror.fromTextArea(this, {
-      mode: "text/x-diff",
-      readOnly: true
+      mode: $(this).attr("data-mode"),
+      readOnly: true,
+      viewportMargin: Infinity
     });
   });
 });

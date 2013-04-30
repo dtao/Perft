@@ -1,6 +1,8 @@
 Perft::App.controllers :projects do
   get "/:id" do |id|
     @project = Project.get(id.to_i)
+    @test_suites = @project.performance_test_suites(:order => [:name.asc])
+    @machine = current_user.machines.first
     render :"projects/show"
   end
 
