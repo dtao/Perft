@@ -6,13 +6,13 @@ Perft::App.controllers :tests do
     # Hack alert! Don't show the 'HEAD' run if it isn't the most recent.
     @test_runs.reject!(&:wip?) unless @test_runs.first.try(:wip?)
 
-    @latest_run = @test.performance_test_suite.performance_test_suite_runs.latest
+    @latest_run = @test.suite.runs.latest
     render :"tests/show"
   end
 
   post "/compare" do
     @tests = PerformanceTest.all(:id => params["include"].map(&:to_i))
-    @suite = @tests.first.performance_test_suite
+    @suite = @tests.first.suite
     render :"tests/compare"
   end
 end

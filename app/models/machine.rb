@@ -2,7 +2,7 @@ class Machine
   include DataMapper::Resource
 
   belongs_to :user
-  has n, :performance_test_suite_runs
+  has n, :suite_runs, "PerformanceTestSuiteRun"
 
   property :id,          Serial
   property :user_id,     Integer, :index => true, :required => true

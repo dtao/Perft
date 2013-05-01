@@ -1,18 +1,19 @@
 class PerformanceTestRun
   include DataMapper::Resource
 
-  belongs_to :performance_test
-  belongs_to :performance_test_suite_run
-  has 1, :performance_test_suite, :through => :performance_test
+  belongs_to :test, "PerformanceTest"
+  belongs_to :suite_run, "PerformanceTestSuiteRun"
+  has 1, :suite, "PerformanceTestSuite", :through => :test
 
-  property :id,                            Serial
-  property :performance_test_id,           Integer, :required => true
-  property :performance_test_suite_run_id, Integer, :required => true
-  property :elapsed_seconds,               Float,   :required => true
-  property :created_at,                    DateTime
-  property :updated_at,                    DateTime
+  property :id,              Serial
+  property :test_id,         Integer, :required => true
+  property :suite_run_id,    Integer, :required => true
+  property :elapsed_seconds, Float,   :required => true
+  property :repetitions,     Integer, :required => true, :default => 1
+  property :created_at,      DateTime
+  property :updated_at,      DateTime
 
   def wip?
-    self.performance_test_suite_run.changeset.blank?
+    self.suite_run.changeset.blank?
   end
 end

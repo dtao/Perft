@@ -1,7 +1,7 @@
 Perft::App.controllers :projects do
   get "/:id" do |id|
     @project = Project.get(id.to_i)
-    @test_suites = @project.performance_test_suites(:order => [:name.asc])
+    @test_suites = @project.suites(:order => [:name.asc])
     @machine = current_user.machines.first
     render :"projects/show"
   end
@@ -23,7 +23,7 @@ Perft::App.controllers :projects do
     project = Project.get(id.to_i)
     raise "Not authorized - user doesn't own project." if project.user != machine.user
 
-    test_suite = project.performance_test_suites.first_or_create(:name => CGI.unescape(test_suite_name))
+    test_suite = project.suites.first_or_create(:name => CGI.unescape(test_suite_name))
     test_suite.process_client_results(params, machine)
   end
 end

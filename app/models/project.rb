@@ -2,8 +2,8 @@ class Project
   include DataMapper::Resource
 
   belongs_to :user
-  has n, :performance_test_suites
-  has n, :performance_test_suite_runs, :through => :performance_test_suites
+  has n, :suites, "PerformanceTestSuite"
+  has n, :suite_runs, "PerformanceTestSuiteRun", :through => :suites, :via => :runs
 
   property :id,         Serial
   property :user_id,    Integer, :index => true, :required => true
