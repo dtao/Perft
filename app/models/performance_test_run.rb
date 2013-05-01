@@ -16,4 +16,8 @@ class PerformanceTestRun
   def wip?
     self.suite_run.changeset.blank?
   end
+
+  def average
+    self.elapsed_seconds / self.repetitions
+  end
 end

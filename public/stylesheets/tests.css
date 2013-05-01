@@ -14,8 +14,15 @@
   .performance-test-runs th {
     text-align: left; }
 
-.elapsed_seconds {
+.elapsed_seconds,
+.repetitions,
+.average {
   text-align: right !important; }
+
+td.elapsed_seconds:after,
+td.average:after {
+  content: " s";
+  font-size: 90%; }
 
 .date,
 .time {

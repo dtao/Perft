@@ -3,8 +3,14 @@
 .performance-test-runs
   @include table
 
-.elapsed_seconds
-  text-align: right !important
+.elapsed_seconds,
+.repetitions,
+.average
+  @include numericColumn
+
+td.elapsed_seconds,
+td.average
+  @include units(s)
 
 .date,
 .time

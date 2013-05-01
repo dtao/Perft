@@ -62,3 +62,11 @@
 
 @mixin headingFont
   font-family: "Roboto Condensed", sans-serif
+
+@mixin numericColumn
+  text-align: right !important
+
+@mixin units($unit)
+  &:after
+    content: " #{$unit}"
+    font-size: 90%
