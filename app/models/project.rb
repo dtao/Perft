@@ -1,5 +1,6 @@
 class Project
   include DataMapper::Resource
+  include Taggable
 
   belongs_to :user
   has n, :suites, "PerformanceTestSuite"

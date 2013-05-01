@@ -37,11 +37,12 @@ class PerformanceTestSuite
 
       results.each do |result|
         test = self.tests.first_or_create(:name => result["description"])
-        test.runs.create({
+        test_run = test.runs.create({
           :suite_run => suite_run,
           :repetitions => result["repetitions"].to_i,
           :elapsed_seconds => result["elapsed_seconds"].to_f
         })
+        test_run.add_tags(result["tags"])
       end
     end
   end

@@ -1,5 +1,6 @@
 class PerformanceTestRun
   include DataMapper::Resource
+  include Taggable
 
   belongs_to :test, "PerformanceTest"
   belongs_to :suite_run, "PerformanceTestSuiteRun"
