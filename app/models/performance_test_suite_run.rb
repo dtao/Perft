@@ -3,7 +3,7 @@ class PerformanceTestSuiteRun
 
   belongs_to :machine
   belongs_to :suite, "PerformanceTestSuite"
-  has n, :test_runs, "PerformanceTestRun"
+  has n, :test_runs, "PerformanceTestRun", :child_key => [:suite_run_id]
 
   property :id,         Serial
   property :machine_id, Integer, :required => true

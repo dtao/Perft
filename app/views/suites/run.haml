@@ -13,8 +13,8 @@
       - @test_runs.each do |test_run|
         %tr
           %td.name
-            = check_box_tag(:"include[]", :value => test_run.performance_test_id)
-            = link_to(test_run.performance_test.name, "/tests/#{test_run.performance_test_id}")
+            = check_box_tag(:"include[]", :value => test_run.test_id)
+            = link_to(test_run.test.name, "/tests/#{test_run.test_id}")
           %td.elapsed_seconds= format_decimal(test_run.elapsed_seconds)
 
     = submit_tag("Compare")

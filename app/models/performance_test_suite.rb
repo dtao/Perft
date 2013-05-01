@@ -2,8 +2,8 @@ class PerformanceTestSuite
   include DataMapper::Resource
 
   belongs_to :project
-  has n, :tests, "PerformanceTest"
-  has n, :runs, "PerformanceTestSuiteRun"
+  has n, :tests, "PerformanceTest", :child_key => [:suite_id]
+  has n, :runs, "PerformanceTestSuiteRun", :child_key => [:suite_id]
 
   property :id,         Serial
   property :project_id, Integer, :required => true
@@ -18,7 +18,7 @@ class PerformanceTestSuite
     changes   = data["changes"]
 
     self.transaction do
-      suite_run = self.suite_runs.first({
+      suite_run = self.runs.first({
         :machine   => machine,
         :changeset => changeset
       })
@@ -28,7 +28,7 @@ class PerformanceTestSuite
         suite_run.destroy
       end
 
-      suite_run = self.suite_runs.create({
+      suite_run = self.runs.create({
         :machine   => machine,
         :changeset => changeset,
         :comment   => comment,
@@ -38,7 +38,8 @@ class PerformanceTestSuite
       results.each do |result|
         test = self.tests.first_or_create(:name => result["description"])
         test.runs.create({
-          :performance_test_suite_run => test_suite_run,
+          :suite_run => suite_run,
+          :repetitions => result["repetitions"].to_i,
           :elapsed_seconds => result["elapsed_seconds"].to_f
         })
       end
