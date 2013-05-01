@@ -34,7 +34,7 @@ module Perft
 
       def authenticate
         auth = Rack::Auth::Basic::Request.new(request.env)
-        return auth if auth.present?
+        return auth if auth.provided?
 
         if !logged_in? && request.path !~ %r{^/(?:logout)?$|^/auth/}
           flash[:notice] = "You must log in to continue."
