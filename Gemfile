@@ -15,7 +15,7 @@ gem "json"
 gem "sass"
 gem "haml"
 gem "randy"
-# gem "dm-noisy-failures"
+gem "dm-noisy-failures", ">= 0.2.2"
 gem "omniauth"
 gem "omniauth-github"
 
