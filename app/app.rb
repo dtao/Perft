@@ -7,12 +7,11 @@ module Perft
 
     enable :sessions
 
+    # TODO: Read up on whether this is stupid, and if so just how stupid.
+    disable :protect_from_csrf
+
     use OmniAuth::Builder do
       provider :github, ENV["GITHUB_KEY"], ENV["GITHUB_SECRET"]
-    end
-
-    configure :development do
-      disable :protect_from_csrf
     end
 
     helpers do
