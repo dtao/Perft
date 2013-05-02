@@ -31,15 +31,6 @@ GIT
       dm-core (~> 1.2.0)
 
 GIT
-  remote: git://github.com/datamapper/dm-sqlite-adapter.git
-  revision: 04c13a60531de09c9f0d0803182fe5dc4379704f
-  branch: release-1.2
-  specs:
-    dm-sqlite-adapter (1.2.0)
-      dm-do-adapter (~> 1.2.0)
-      do_sqlite3 (~> 0.10.6)
-
-GIT
   remote: git://github.com/datamapper/dm-timestamps.git
   revision: 1d3e199632c8e97a964f843786a7039e3398f135
   branch: release-1.2
@@ -104,12 +95,20 @@ GEM
       dm-core (~> 1.2.0)
     dm-noisy-failures (0.2.1)
       data_mapper
+    dm-postgres-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_postgres (~> 0.10.6)
     dm-serializer (1.2.2)
       dm-core (~> 1.2.0)
       fastercsv (~> 1.5)
       json (~> 1.6)
       json_pure (~> 1.6)
       multi_json (~> 1.0)
+    dm-sqlite-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_sqlite3 (~> 0.10.6)
+    do_postgres (0.10.12)
+      data_objects (= 0.10.12)
     do_sqlite3 (0.10.12)
       data_objects (= 0.10.12)
     dotenv (0.7.0)
@@ -183,6 +182,7 @@ GEM
     padrino-mailer (0.11.1)
       mail (~> 2.5.3)
       padrino-core (= 0.11.1)
+    pg (0.15.1)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -218,7 +218,8 @@ DEPENDENCIES
   dm-core!
   dm-migrations!
   dm-noisy-failures
-  dm-sqlite-adapter!
+  dm-postgres-adapter
+  dm-sqlite-adapter
   dm-timestamps!
   dm-transactions!
   dm-types!
@@ -229,6 +230,7 @@ DEPENDENCIES
   omniauth
   omniauth-github
   padrino (= 0.11.1)
+  pg
   rake
   randy
   sass

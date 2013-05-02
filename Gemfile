@@ -10,9 +10,17 @@ gem "thin"
 gem "foreman"
 gem "rake"
 
-# DB requirements
+# Component requirements
+gem "json"
+gem "sass"
+gem "haml"
+gem "randy"
+gem "dm-noisy-failures"
+gem "omniauth"
+gem "omniauth-github"
+
+# The latest DataMapper branch has some fixes for Ruby 2.0
 [
-  "dm-sqlite-adapter",
   "dm-validations",
   "dm-timestamps",
   "dm-migrations",
@@ -25,16 +33,15 @@ gem "rake"
   gem data_mapper_gem, :git => "git://github.com/datamapper/#{data_mapper_gem}.git", :branch => "release-1.2"
 end
 
-# Component requirements
-gem "json"
-gem "sass"
-gem "haml"
-gem "randy"
-gem "dm-noisy-failures"
-gem "omniauth"
-gem "omniauth-github"
+# Environment-specific requirements
+group :production do
+  gem "dm-postgres-adapter"
+  gem "pg"
+end
 
-# Test requirements
+group :development do
+  gem "dm-sqlite-adapter"
+end
 
 # Padrino Stable Gem
 gem "padrino", "0.11.1"
