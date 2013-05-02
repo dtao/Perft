@@ -1,7 +1,7 @@
 Perft::App.controllers :tests do
   get "/:id" do |id|
     @test = PerformanceTest.get(id.to_i)
-    @test_runs = @test.performance_test_runs(:order => [:id.desc])
+    @test_runs = @test.runs(:order => [:id.desc])
 
     # Hack alert! Don't show the 'HEAD' run if it isn't the most recent.
     @test_runs.reject!(&:wip?) unless @test_runs.first.try(:wip?)
