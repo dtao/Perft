@@ -78,32 +78,14 @@ GEM
     addressable (2.3.4)
     bcrypt-ruby (3.0.1)
     daemons (1.1.9)
-    data_mapper (1.2.0)
-      dm-aggregates (~> 1.2.0)
-      dm-constraints (~> 1.2.0)
-      dm-core (~> 1.2.0)
-      dm-migrations (~> 1.2.0)
-      dm-serializer (~> 1.2.0)
-      dm-timestamps (~> 1.2.0)
-      dm-transactions (~> 1.2.0)
-      dm-types (~> 1.2.0)
-      dm-validations (~> 1.2.0)
     data_objects (0.10.12)
       addressable (~> 2.1)
     dm-do-adapter (1.2.0)
       data_objects (~> 0.10.6)
       dm-core (~> 1.2.0)
-    dm-noisy-failures (0.2.1)
-      data_mapper
     dm-postgres-adapter (1.2.0)
       dm-do-adapter (~> 1.2.0)
       do_postgres (~> 0.10.6)
-    dm-serializer (1.2.2)
-      dm-core (~> 1.2.0)
-      fastercsv (~> 1.5)
-      json (~> 1.6)
-      json_pure (~> 1.6)
-      multi_json (~> 1.0)
     dm-sqlite-adapter (1.2.0)
       dm-do-adapter (~> 1.2.0)
       do_sqlite3 (~> 0.10.6)
@@ -128,7 +110,6 @@ GEM
     httpauth (0.2.0)
     i18n (0.6.4)
     json (1.7.7)
-    json_pure (1.7.7)
     jwt (0.1.8)
       multi_json (>= 1.5)
     mail (2.5.3)
@@ -217,7 +198,6 @@ DEPENDENCIES
   dm-constraints!
   dm-core!
   dm-migrations!
-  dm-noisy-failures
   dm-postgres-adapter
   dm-sqlite-adapter
   dm-timestamps!
