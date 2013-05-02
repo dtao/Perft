@@ -12,7 +12,7 @@
     - @suite_runs.each do |run|
       %tr
         %td.changeset
-          %a(href="/suites/#{@suite.id}/#{run.id}")=h "#{run.changeset}: #{run.comment}"
+          %a(href="/suites/#{@suite.id}/#{run.id}")= render_changeset(run)
         %td.day= format_day(run.created_at)
         %td.date= format_date(run.created_at)
         %td.time= format_time(run.created_at)

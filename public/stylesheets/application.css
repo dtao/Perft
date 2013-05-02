@@ -129,10 +129,12 @@ input[type="submit"] {
   .performance-test-suite-runs .date,
   .performance-test-suite-runs .time {
     white-space: nowrap; }
-  .performance-test-suite-runs .comment {
+  .performance-test-suite-runs .changeset {
     white-space: nowrap;
     overflow-x: hidden;
     text-overflow: ellipsis; }
+    .performance-test-suite-runs .changeset a:empty:after {
+      content: "(HEAD)"; }
 
 .test-runs {
   border-collapse: collapse;
@@ -154,6 +156,9 @@ input[type="submit"] {
   .test-runs input[type="checkbox"] {
     position: relative;
     top: 4px; }
+
+.text-filter {
+  margin-bottom: 20px; }
 
 .performance-test-runs {
   border-collapse: collapse;

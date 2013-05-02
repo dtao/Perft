@@ -17,6 +17,24 @@ $(document).ready(function() {
     return false;
   });
 
+  $(".text-filter").each(function() {
+    var $input = $(this);
+    var target = $input.attr("data-filter");
+    var filterTarget = $input.attr("data-filter-by");
+
+    $input.keyup(function() {
+      var prefix = $input.val();
+      $(target).each(function() {
+        var $element = $(this);
+        if ($(filterTarget, $element).text().indexOf(prefix) === 0) {
+          $element.show();
+        } else {
+          $element.hide();
+        }
+      });
+    });
+  });
+
   $("textarea.code").each(function() {
     CodeMirror.fromTextArea(this, {
       mode: $(this).attr("data-mode"),

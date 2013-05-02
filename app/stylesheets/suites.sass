@@ -12,10 +12,13 @@
   .time
     white-space: nowrap
 
-  .comment
+  .changeset
     white-space: nowrap
     overflow-x: hidden
     text-overflow: ellipsis
+
+    a:empty:after
+      content: "(HEAD)"
 
 .test-runs
   @include table
@@ -26,3 +29,6 @@
   input[type="checkbox"]
     position: relative
     top: 4px
+
+.text-filter
+  margin-bottom: 20px
