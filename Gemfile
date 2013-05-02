@@ -15,7 +15,7 @@ gem "json"
 gem "sass"
 gem "haml"
 gem "randy"
-gem "dm-noisy-failures", ">= 0.2.2"
+gem "dm-noisy-failures", ">= 0.2.3"
 gem "omniauth"
 gem "omniauth-github"
 
@@ -32,6 +32,9 @@ gem "omniauth-github"
 ].each do |data_mapper_gem|
   gem data_mapper_gem, :git => "git://github.com/datamapper/#{data_mapper_gem}.git", :branch => "release-1.2"
 end
+
+# Test requirements
+gem "rspec"
 
 # Environment-specific requirements
 group :production do

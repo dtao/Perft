@@ -1,5 +1,6 @@
 .env
 
+.bundle/
 .sass-cache/
 log/
 tmp/

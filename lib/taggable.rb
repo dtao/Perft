@@ -5,6 +5,10 @@ module Taggable
     end
   end
 
+  def tag_names
+    self.tags.map(&:name)
+  end
+
   def add_tag(tag_name, safe_after=true)
     self.tags << Tag.first_or_create(:name => tag_name)
     save if safe_after
