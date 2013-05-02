@@ -41,6 +41,8 @@
       background-color: white; }
   .test-runs th {
     text-align: left; }
+  .test-runs span.tags {
+    font-size: 80%; }
   .test-runs input[type="checkbox"] {
     position: relative;
     top: 4px; }
