@@ -27,7 +27,9 @@
       - if logged_in?
         = h("Logged in as #{current_user.name}.")
         = link_to("Log out", "/logout")
-      - else
-        = link_to("Log in", "/login")
+        = yield
 
-    = yield
+      - else
+        You must
+        = link_to("log in", "/login")
+        to get started.
