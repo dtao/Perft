@@ -23,17 +23,23 @@ $(document).ready(function() {
     var filterTarget = $input.attr("data-filter-by");
 
     $input.keyup(function() {
-      var prefix = $input.val();
+      var prefixes = $.trim($input.val()).split(/\s+/);
       $(target).each(function() {
         var $element = $(this);
-        var matchedAnyTarget = false;
+        var matchCount = 0;
+        var matchedAllPrefixes = false;
         $(filterTarget, $element).each(function() {
-          if (this.textContent.indexOf(prefix) === 0) {
-            matchedAnyTarget = true;
+          for (var i = 0; i < prefixes.length; ++i) {
+            if (this.textContent.indexOf(prefixes[i]) === 0) {
+              ++matchCount;
+            }
+          }
+          if (matchCount === prefixes.length) {
+            matchedAllPrefixes = true;
             return false;
           }
         });
-        $element[matchedAnyTarget ? "show" : "hide"]();
+        $element[matchedAllPrefixes ? "show" : "hide"]();
       });
     });
   });
