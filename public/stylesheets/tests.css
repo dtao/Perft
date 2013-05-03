@@ -35,6 +35,8 @@ td.average:after {
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis; }
+  .changeset a:empty:after {
+    content: "(HEAD)"; }
 
 .CodeMirror {
   font-family: "Source Code Pro", monospace;
