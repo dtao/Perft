@@ -17,7 +17,7 @@
         %td.date= format_date(runs.first.created_at)
         %td.time= format_time(runs.first.created_at)
         - @tags.each do |tag_key|
-          - run = runs.first { |r| r.tags_key == tag_key }
+          - run = runs.select { |r| r.tags_key == tag_key }.first
           %td.elapsed_seconds= format_decimal(run.elapsed_seconds)
 
   .actions= link_to("Back", "/suites/#{@test.suite_id}/latest")
