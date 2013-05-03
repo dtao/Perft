@@ -16,6 +16,7 @@ class PerformanceTestSuite
     changeset = data["changeset"]
     comment   = data["comment"]
     changes   = data["changes"]
+    append    = data["append"]
 
     self.transaction do
       suite_run = self.runs.first({
@@ -23,12 +24,13 @@ class PerformanceTestSuite
         :changeset => changeset
       })
 
-      if suite_run.present?
+      if suite_run.present? && !append
         suite_run.test_runs.destroy!
         suite_run.destroy
+        suite_run = nil
       end
 
-      suite_run = self.runs.create({
+      suite_run ||= self.runs.create({
         :machine   => machine,
         :changeset => changeset,
         :comment   => comment,
