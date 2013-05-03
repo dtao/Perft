@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto+Condensed:400,700);
 .performance-test-runs {
   border-collapse: collapse;
   width: 100%; }
@@ -36,6 +37,7 @@ td.average:after {
   text-overflow: ellipsis; }
 
 .CodeMirror {
+  font-family: "Source Code Pro", monospace;
   height: auto;
   border-top: 1px solid black;
   margin: 24px auto; }

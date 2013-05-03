@@ -1,3 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto+Condensed:400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto+Condensed:400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto+Condensed:400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto+Condensed:400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Roboto+Condensed:400,700);
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif; }
   body.normal-view .main {
@@ -241,6 +246,7 @@ td.average:after {
   text-overflow: ellipsis; }
 
 .CodeMirror {
+  font-family: "Source Code Pro", monospace;
   height: auto;
   border-top: 1px solid black;
   margin: 24px auto; }
