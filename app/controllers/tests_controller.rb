@@ -7,7 +7,10 @@ Perft::App.controllers :tests do
     test_runs.reject!(&:wip?) unless test_runs.first.try(:wip?)
 
     @tags = test_runs.map(&:tags_key).uniq.sort
-    @test_runs = test_runs.group_by(&:changeset)
+    test_runs_by_changeset = test_runs.group_consecutive(&:suite_run)
+    @test_runs = test_runs_by_changeset.map do |suite_run, test_runs|
+      [suite_run, test_runs.map_to_hash(&:tags_key)]
+    end
 
     @latest_run = @test.suite.runs.latest
     render :"tests/show"
