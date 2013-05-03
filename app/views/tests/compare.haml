@@ -7,11 +7,11 @@
       - @tests.each do |test|
         %th.elapsed_seconds= test.name
 
-    - @suite.performance_test_suite_runs(:order => [:id.desc]).each do |suite_run|
+    - @suite.runs(:order => [:id.desc]).each do |suite_run|
       %tr
         %td.changeset= "#{suite_run.changeset} - #{suite_run.comment}"
         - @tests.each do |test|
           %td.elapsed_seconds
-            = format_decimal(suite_run.performance_test_runs.first(:performance_test_id => test.id).try(:elapsed_seconds))
+            = format_decimal(suite_run.test_runs.first(:performance_test_id => test.id).try(:elapsed_seconds))
 
   .actions= link_to("Back", "/suites/#{@suite.id}/latest")

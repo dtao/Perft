@@ -12,7 +12,7 @@
 
     - @test_runs.each do |run|
       %tr
-        %td.changeset= render_changeset(run)
+        %td.changeset= render_changeset(run.suite_run)
         %td.date= format_date(run.created_at)
         %td.time= format_time(run.created_at)
         %td.elapsed_seconds= format_decimal(run.elapsed_seconds)
