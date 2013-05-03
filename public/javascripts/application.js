@@ -42,4 +42,8 @@ $(document).ready(function() {
       viewportMargin: Infinity
     });
   });
+
+  setTimeout(function clearNotice() {
+    $(".notices").empty();
+  }, 3000);
 });

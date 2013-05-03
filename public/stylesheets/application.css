@@ -12,6 +12,36 @@ a {
   a:hover {
     color: #aabbcc; }
 
+.notices {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-boz-sizing: border-box;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  width: 300px;
+  background-color: black;
+  color: white; }
+  .notices:empty {
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    right: -300px; }
+  .notices .notice {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 150%;
+    text-transform: uppercase; }
+
 label, input {
   display: block; }
 

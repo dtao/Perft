@@ -15,6 +15,28 @@ a
   &:hover
     color: #abc
 
+.notices
+  @include borderBox
+  @include animated
+  @include translucent(0.75)
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  padding: 20px
+  width: 300px
+  background-color: #000
+  color: #fff
+
+  &:empty
+    @include animated
+    right: -300px
+
+  .notice
+    @include headingFont
+    font-size: 150%
+    text-transform: uppercase
+
 label, input
   display: block
 

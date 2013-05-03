@@ -61,7 +61,7 @@ module Perft
     get "/auth/:provider/callback" do |provider|
       user = User.get_or_create(provider, auth_hash["uid"], auth_user_info)
       session[:user_id] = user.id
-      flash[:notice] = "Welcome, #{user.name}!"
+      flash[:notice] = "Welcome, #{user.name}."
       redirect("/")
     end
   end

@@ -57,6 +57,16 @@
   -o-box-sizing: border-box
   -webkit-boz-sizing: border-box
 
+@mixin animated
+  transition: all 0.5s
+  -moz-transition: all 0.5s
+  -o-transition: all 0.5s
+  -webkit-transition: all 0.5s
+
+@mixin translucent($opacity)
+  opacity: $opacity
+  filter: alpha(opacity=($opacity * 100))
+
 @mixin simpleFont
   font-family: "Open Sans", Helvetica, Arial, sans-serif
 

@@ -17,15 +17,17 @@
     %header
       %h1= link_to("Perft", "/")
 
-    %section.notices
-      - if flash[:notice]
+    - if flash[:notice]
+      %section.notices
         .notice= flash[:notice]
+    - else
+      %secion.notices
 
     %section.session
       - if logged_in?
         = h("Logged in as #{current_user.name}.")
         = link_to("Log out", "/logout")
       - else
-        = link_to("Log in", "/auth/github")
+        = link_to("Log in", "/login")
 
     = yield
