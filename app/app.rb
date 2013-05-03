@@ -40,6 +40,13 @@ module Perft
           redirect("/")
         end
       end
+
+      def create_session(provider, uid, user_info)
+        user = User.get_or_create(provider, uid, user_info)
+        session[:user_id] = user.id
+        flash[:notice] = "Welcome, #{user.name}."
+        redirect("/")
+      end
     end
 
     before do
@@ -53,14 +60,12 @@ module Perft
     end
 
     get "/login" do
-      if Padrino.env == :development
-        user = User.get_or_create("github", "123456789", {
-          "name" => "Daniel Tao",
-          "email" => "daniel.tao@gmail.com"
+      if Padrino.env == :development && ENV["DEV_USER_INFO"]
+        name, email = ENV["DEV_USER_INFO"].split(/\s+/)
+        create_session("github", "123456789", {
+          "name" => name,
+          "email" => email
         })
-        session[:user_id] = user.id
-        flash[:notice] = "Welcome, #{user.name}."
-        redirect("/")
       else
         redirect("/auth/github")
       end
@@ -73,10 +78,7 @@ module Perft
     end
 
     get "/auth/:provider/callback" do |provider|
-      user = User.get_or_create(provider, auth_hash["uid"], auth_user_info)
-      session[:user_id] = user.id
-      flash[:notice] = "Welcome, #{user.name}."
-      redirect("/")
+      create_session(provider, auth_hash["uid"], auth_user_info)
     end
   end
 end
