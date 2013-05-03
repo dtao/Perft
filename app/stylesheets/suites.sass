@@ -23,8 +23,16 @@
 .test-runs
   @include table
 
-  span.tags
+  span.tag
+    display: inline-block
+    background-color: #cde
     font-size: 80%
+    margin-left: 0.5em
+    padding: 0 0.5em
+    cursor: pointer
+
+    &:hover
+      background-color: #def
 
   input[type="checkbox"]
     position: relative

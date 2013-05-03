@@ -26,11 +26,14 @@ $(document).ready(function() {
       var prefix = $input.val();
       $(target).each(function() {
         var $element = $(this);
-        if ($(filterTarget, $element).text().indexOf(prefix) === 0) {
-          $element.show();
-        } else {
-          $element.hide();
-        }
+        var matchedAnyTarget = false;
+        $(filterTarget, $element).each(function() {
+          if (this.textContent.indexOf(prefix) === 0) {
+            matchedAnyTarget = true;
+            return false;
+          }
+        });
+        $element[matchedAnyTarget ? "show" : "hide"]();
       });
     });
   });

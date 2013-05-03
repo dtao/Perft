@@ -6,7 +6,7 @@
 
   .pie-chart(data-source=".test-runs")
 
-  = text_filter("Filter by tag(s)", ".test-runs tr:nth-child(n+2)", ".name .tags")
+  = text_filter("Filter by tag(s)", ".test-runs tr:nth-child(n+2)", ".name .tag")
 
   - form_tag("/tests/compare") do
     %table.test-runs
@@ -21,7 +21,8 @@
           %td.name
             = check_box_tag(:"include[]", :value => test_run.test_id)
             = link_to(test_run.test.name, "/tests/#{test_run.test_id}/#{@suite_run.id}")
-            %span.tags= render_tags(test_run)
+            - test_run.tags.each do |tag|
+              %span.tag= tag.name
           %td.elapsed_seconds= format_decimal(test_run.elapsed_seconds)
           %td.repetitions= test_run.repetitions
           %td.average= format_decimal(test_run.average)
