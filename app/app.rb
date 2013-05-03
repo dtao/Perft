@@ -35,7 +35,7 @@ module Perft
         auth = Rack::Auth::Basic::Request.new(request.env)
         return auth if auth.provided?
 
-        if !logged_in? && request.path !~ %r{^/(?:logout)?$|^/auth/}
+        if !logged_in? && request.path !~ %r{^/(?:login|logout)?$|^/auth/}
           flash[:notice] = "You must log in to continue."
           redirect("/")
         end
@@ -50,6 +50,20 @@ module Perft
       @projects = current_user.try(:projects) || []
       @machines = current_user.try(:machines) || []
       render :index
+    end
+
+    get "/login" do
+      if Padrino.env == :development
+        user = User.get_or_create("github", "123456789", {
+          "name" => "Daniel Tao",
+          "email" => "daniel.tao@gmail.com"
+        })
+        session[:user_id] = user.id
+        flash[:notice] = "Welcome, #{user.name}."
+        redirect("/")
+      else
+        redirect("/auth/github")
+      end
     end
 
     get "/logout" do
