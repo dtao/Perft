@@ -12,6 +12,7 @@
     = javascript_include_tag "codemirror/diff"
     = javascript_include_tag "codemirror/yaml"
     = javascript_include_tag "application"
+    = yield_content(:javascript)
 
   %body(class="#{content_for?(:supplemental) ? 'split-view' : 'normal-view'}")
     %section.main

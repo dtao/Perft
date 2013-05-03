@@ -1,9 +1,23 @@
+- content_for(:javascript) do
+  :javascript
+    function getChartOptions() {
+      return {
+        xAxis: {
+          plotBands: [{
+            from: #{@current_index - 0.5},
+            to: #{@current_index + 0.5},
+            color: 'rgba(68, 170, 213, 0.1)',
+          }]
+        }
+      };
+    }
+
 %section.performance-test
   %h1= @test.name
 
   %h2= @test.suite.name
 
-  %table.performance-test-runs.render-to-spline-chart(data-value-columns="3,4" data-order="descending")
+  %table.performance-test-runs.render-to-spline-chart(data-value-columns="3,4" data-order="descending" data-options="getChartOptions")
     %tr
       %th.changeset Changeset
       %th.date Date
@@ -12,8 +26,9 @@
         %th.tags= tag_key
 
     - @test_runs.each do |suite_run, runs|
-      %tr
-        %td.changeset= render_changeset(suite_run)
+      %tr(class="#{suite_run == @suite_run ? 'current' : ''}")
+        %td.changeset
+          = link_to(render_changeset(suite_run), "/tests/#{@test.id}/#{suite_run.id}")
         %td.date= format_date(suite_run.created_at)
         %td.time= format_time(suite_run.created_at)
         - @tags.each do |tag_key|
@@ -22,4 +37,4 @@
   .actions= link_to("Back", "/suites/#{@test.suite_id}/latest")
 
 - content_for(:supplemental) do
-  %textarea.code(data-mode="diff")=h @latest_run.changes
+  %textarea.code(data-mode="diff")=h @suite_run.changes

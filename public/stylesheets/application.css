@@ -218,6 +218,8 @@ input[type="submit"] {
       background-color: white; }
   .performance-test-runs th {
     text-align: left; }
+  .performance-test-runs tr.current td {
+    font-weight: bold; }
 
 .elapsed_seconds,
 .repetitions,

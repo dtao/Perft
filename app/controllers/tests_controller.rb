@@ -1,5 +1,5 @@
 Perft::App.controllers :tests do
-  get "/:id" do |id|
+  get "/:id/:suite_run_id" do |id, suite_run_id|
     @test = PerformanceTest.get(id.to_i)
     test_runs = @test.runs(:order => [:id.desc])
 
@@ -12,7 +12,8 @@ Perft::App.controllers :tests do
       [suite_run, test_runs.map_to_hash(&:tags_key)]
     end
 
-    @latest_run = @test.suite.runs.latest
+    @suite_run = @test.suite.runs.get(suite_run_id.to_i)
+    @current_index = @test_runs.map(&:first).reverse.index(@suite_run)
     render :"tests/show"
   end
 
