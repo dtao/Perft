@@ -22,5 +22,5 @@
 
   .actions= link_to("Back", "/suites/#{@test.suite_id}/latest")
 
-  - if !@latest_run.wip?
-    %textarea.code(data-mode="diff")=h @latest_run.changes
+- content_for(:supplemental) do
+  %textarea.code(data-mode="diff")=h @latest_run.changes

@@ -13,23 +13,28 @@
     = javascript_include_tag "codemirror/yaml"
     = javascript_include_tag "application"
 
-  %body
-    %header
-      %h1= link_to("Perft", "/")
+  %body(class="#{content_for?(:supplemental) ? 'split-view' : 'normal-view'}")
+    %section.main
+      %header
+        %h1= link_to("Perft", "/")
+
+      - if logged_in?
+        .session
+          = h("Logged in as #{current_user.name}.")
+          = link_to("Log out", "/logout")
+        = yield
+
+      - else
+        .session
+          You must
+          = link_to("log in", "/login")
+          to get started.
 
     - if flash[:notice]
       %section.notices
         .notice= flash[:notice]
     - else
-      %secion.notices
+      %section.notices
 
-    %section.session
-      - if logged_in?
-        = h("Logged in as #{current_user.name}.")
-        = link_to("Log out", "/logout")
-        = yield
-
-      - else
-        You must
-        = link_to("log in", "/login")
-        to get started.
+    %section.supplemental
+      = yield_content(:supplemental)
