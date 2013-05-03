@@ -14,8 +14,12 @@ class PerformanceTestRun
   property :created_at,      DateTime
   property :updated_at,      DateTime
 
+  def changeset
+    self.suite_run.changeset
+  end
+
   def wip?
-    self.suite_run.changeset.blank?
+    self.changeset.blank?
   end
 
   def average

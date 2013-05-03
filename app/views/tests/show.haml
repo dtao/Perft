@@ -3,19 +3,22 @@
 
   %h2= @test.suite.name
 
-  %table.performance-test-runs.render-to-line-chart(data-value-columns="3" data-order="descending")
+  %table.performance-test-runs.render-to-line-chart(data-value-columns="3,4" data-order="descending")
     %tr
       %th.changeset Changeset
       %th.date Date
       %th.time Time
-      %th.elapsed_seconds Elapsed Seconds
+      - @tags.each do |tag_key|
+        %th.tags= tag_key
 
-    - @test_runs.each do |run|
+    - @test_runs.each do |changeset, runs|
       %tr
-        %td.changeset= render_changeset(run.suite_run)
-        %td.date= format_date(run.created_at)
-        %td.time= format_time(run.created_at)
-        %td.elapsed_seconds= format_decimal(run.elapsed_seconds)
+        %td.changeset= render_changeset(runs.first.suite_run)
+        %td.date= format_date(runs.first.created_at)
+        %td.time= format_time(runs.first.created_at)
+        - @tags.each do |tag_key|
+          - run = runs.first { |r| r.tags_key == tag_key }
+          %td.elapsed_seconds= format_decimal(run.elapsed_seconds)
 
   .actions= link_to("Back", "/suites/#{@test.suite_id}/latest")
 

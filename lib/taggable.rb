@@ -5,6 +5,10 @@ module Taggable
     end
   end
 
+  def tags_key
+    self.tag_names.sort.join(", ")
+  end
+
   def tag_names
     self.tags.map(&:name)
   end
