@@ -14,21 +14,21 @@
     = yield_content(:javascript)
 
   %body(class="#{content_for?(:supplemental) ? 'split-view' : 'normal-view'}")
-    %section.main
-      %header
-        %h1= link_to("Perft", "/")
+    %header
+      %h1= link_to("Perft", "/")
 
-      - if logged_in?
-        .session
+      .session
+        - if logged_in?
           = h("Logged in as #{current_user.name}.")
           = link_to("Log out", "/logout")
-        = yield
 
-      - else
-        .session
+        - else
           You must
           = link_to("log in", "/login")
           to get started.
+
+    %section.main
+      = yield if logged_in?
 
     - if flash[:notice]
       %section.notices
