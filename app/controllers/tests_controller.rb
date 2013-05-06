@@ -13,7 +13,7 @@ Perft::App.controllers :tests do
     end
 
     @suite_run = @test.suite.runs.get(suite_run_id.to_i)
-    @current_index = @test_runs.map(&:first).reverse.index(@suite_run)
+    @current_index = @test_runs.map(&:first).take(10).reverse.index(@suite_run) || -1
     render :"tests/show"
   end
 

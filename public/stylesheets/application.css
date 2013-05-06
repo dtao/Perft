@@ -49,16 +49,17 @@ body {
     padding: 20px;
     overflow-x: hidden; }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Roboto Condensed", sans-serif; }
-  h1 a, h2 a {
-    font-size: 75%; }
 
-h1 {
+.main h1 {
   font-size: 200%;
   margin-bottom: 0; }
+  .main h1 a {
+    font-size: 75%; }
 
-h2 {
+.main h2 {
   font-size: 150%;
   margin-top: 0; }
 
