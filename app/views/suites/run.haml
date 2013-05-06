@@ -4,7 +4,7 @@
     %span.run-date= format_date(@suite_run.created_at)
     %span.run-time= format_time(@suite_run.created_at)
 
-  .column-chart(data-source=".test-runs" data-value-columns="2" data-limit="10")
+  .column-chart(data-source=".test-runs" data-value-columns="4" data-limit="10")
 
   = text_filter("Filter by tag(s)", ".test-runs tr:nth-child(n+2)", ".name .tag")
 
