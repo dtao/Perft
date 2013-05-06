@@ -32,6 +32,8 @@
     text-overflow: ellipsis; }
     .performance-test-suite-runs .changeset a:empty:after {
       content: "(HEAD)"; }
+  .performance-test-suite-runs .elapsed-seconds {
+    text-align: right; }
 
 .test-runs {
   border-collapse: collapse;

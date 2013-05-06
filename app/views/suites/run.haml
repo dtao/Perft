@@ -9,23 +9,19 @@
 
   = text_filter("Filter by tag(s)", ".test-runs tr:nth-child(n+2)", ".name .tag")
 
-  - form_tag("/tests/compare") do
-    %table.test-runs
+  %table.test-runs
+    %tr
+      %th.name Test
+      %th.elapsed_seconds Elapsed Seconds
+      %th.repetitions Repetitions
+      %th.average Average Duration
+
+    - @test_runs.each do |test_run|
       %tr
-        %th.name Test
-        %th.elapsed_seconds Elapsed Seconds
-        %th.repetitions Repetitions
-        %th.average Average Duration
-
-      - @test_runs.each do |test_run|
-        %tr
-          %td.name
-            = check_box_tag(:"include[]", :value => test_run.test_id)
-            = link_to(test_run.test.name, "/tests/#{test_run.test_id}/#{@suite_run.id}")
-            - test_run.tags.each do |tag|
-              %span.tag= tag.name
-          %td.elapsed_seconds= format_decimal(test_run.elapsed_seconds)
-          %td.repetitions= test_run.repetitions
-          %td.average= format_decimal(test_run.average)
-
-    = submit_tag("Compare")
+        %td.name
+          = link_to(test_run.test.name, "/tests/#{test_run.test_id}/#{@suite_run.id}")
+          - test_run.tags.each do |tag|
+            %span.tag= tag.name
+        %td.elapsed_seconds= format_decimal(test_run.elapsed_seconds)
+        %td.repetitions= test_run.repetitions
+        %td.average= format_decimal(test_run.average)

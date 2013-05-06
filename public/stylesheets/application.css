@@ -226,6 +226,8 @@ input[type="submit"] {
     text-overflow: ellipsis; }
     .performance-test-suite-runs .changeset a:empty:after {
       content: "(HEAD)"; }
+  .performance-test-suite-runs .elapsed-seconds {
+    text-align: right; }
 
 .test-runs {
   border-collapse: collapse;
@@ -297,6 +299,8 @@ td.average:empty:after {
 
 .date,
 .time {
+  color: #888888;
+  font-size: 75%;
   white-space: nowrap; }
 
 .changeset {

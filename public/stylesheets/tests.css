@@ -35,6 +35,8 @@ td.average:empty:after {
 
 .date,
 .time {
+  color: #888888;
+  font-size: 75%;
   white-space: nowrap; }
 
 .changeset {

@@ -3,19 +3,17 @@
     = @suite.name
     = link_to("Back", "/projects/#{@suite.project_id}")
 
-  %table.performance-test-suite-runs.render-to-spline-chart(data-value-columns="4" data-order="descending" data-limit="10")
+  %table.performance-test-suite-runs.render-to-spline-chart(data-value-columns="2" data-order="descending" data-limit="10")
     %tr
       %th.changeset Changeset
       %th.version Version
-      %th.date Date
-      %th.time Time
       %th.elapsed-seconds Elapsed seconds
 
     - @suite_runs.each do |run|
       %tr
         %td.changeset
           %a(href="/suites/#{@suite.id}/#{run.id}")= render_changeset(run)
+          %span.date= format_date(run.created_at)
+          %span.time= format_time(run.created_at)
         %td.version= run.version
-        %td.date= format_date(run.created_at)
-        %td.time= format_time(run.created_at)
-        %td.elapsed_seconds= format_decimal(run.total_elapsed_seconds)
+        %td.elapsed-seconds= format_decimal(run.total_elapsed_seconds)

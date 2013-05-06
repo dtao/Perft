@@ -16,10 +16,4 @@ Perft::App.controllers :tests do
     @current_index = @test_runs.map(&:first).take(10).reverse.index(@suite_run) || -1
     render :"tests/show"
   end
-
-  post "/compare" do
-    @tests = PerformanceTest.all(:id => params["include"].map(&:to_i))
-    @suite = @tests.first.suite
-    render :"tests/compare"
-  end
 end

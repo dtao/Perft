@@ -26,18 +26,19 @@
     data-options="getChartOptions")
 
     %tr
-      %th.changeset Changeset
-      %th.date Date
-      %th.time Time
+      %th Changeset
+      %th Version
       - @tags.each do |tag_key|
         %th.tags= tag_key
 
     - @test_runs.each do |suite_run, runs|
       %tr(class="#{suite_run == @suite_run ? 'current' : ''}")
-        %td.changeset
+        %td
           = link_to(render_changeset(suite_run), "/tests/#{@test.id}/#{suite_run.id}")
-        %td.date= format_date(suite_run.created_at)
-        %td.time= format_time(suite_run.created_at)
+          .details
+            %span.date= format_date(suite_run.created_at)
+            %span.time= format_time(suite_run.created_at)
+        %td= suite_run.version
         - @tags.each do |tag_key|
           %td.elapsed_seconds= format_decimal(runs[tag_key].try(:elapsed_seconds))
 
