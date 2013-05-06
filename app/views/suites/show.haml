@@ -1,10 +1,10 @@
 %section.performance-test-suite
   %h1= @suite.name
 
-  %table.performance-test-suite-runs.render-to-spline-chart(data-value-columns="4" data-order="descending")
+  %table.performance-test-suite-runs.render-to-spline-chart(data-value-columns="4" data-order="descending" data-limit="10")
     %tr
       %th.changeset Changeset
-      %th.day Day
+      %th.version Version
       %th.date Date
       %th.time Time
       %th.elapsed-seconds Elapsed seconds
@@ -13,7 +13,7 @@
       %tr
         %td.changeset
           %a(href="/suites/#{@suite.id}/#{run.id}")= render_changeset(run)
-        %td.day= format_day(run.created_at)
+        %td.version= run.version
         %td.date= format_date(run.created_at)
         %td.time= format_time(run.created_at)
         %td.elapsed_seconds= format_decimal(run.total_elapsed_seconds)
