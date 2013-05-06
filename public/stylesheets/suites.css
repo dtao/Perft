@@ -7,20 +7,24 @@
 .performance-test-suite-runs {
   border-collapse: collapse;
   width: 100%; }
+  .performance-test-suite-runs tr:first-child th {
+    vertical-align: bottom; }
+  .performance-test-suite-runs tr:nth-child(n+2) td {
+    padding: 5px;
+    white-space: nowrap; }
   .performance-test-suite-runs tr:nth-child(even) {
     background-color: #eeeeee; }
   .performance-test-suite-runs tr:hover {
     background-color: #ffffee; }
-  .performance-test-suite-runs tr td {
-    padding: 5px; }
   .performance-test-suite-runs tr:first-child {
     border-bottom: 1px solid black; }
     .performance-test-suite-runs tr:first-child:hover {
       background-color: white; }
   .performance-test-suite-runs th {
     text-align: left; }
-  .performance-test-suite-runs .date,
-  .performance-test-suite-runs .time {
+  .performance-test-suite-runs td.date,
+  .performance-test-suite-runs td.time,
+  .performance-test-suite-runs td.elapsed-seconds {
     white-space: nowrap; }
   .performance-test-suite-runs .changeset {
     white-space: nowrap;
@@ -32,12 +36,15 @@
 .test-runs {
   border-collapse: collapse;
   width: 100%; }
+  .test-runs tr:first-child th {
+    vertical-align: bottom; }
+  .test-runs tr:nth-child(n+2) td {
+    padding: 5px;
+    white-space: nowrap; }
   .test-runs tr:nth-child(even) {
     background-color: #eeeeee; }
   .test-runs tr:hover {
     background-color: #ffffee; }
-  .test-runs tr td {
-    padding: 5px; }
   .test-runs tr:first-child {
     border-bottom: 1px solid black; }
     .test-runs tr:first-child:hover {

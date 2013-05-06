@@ -2,12 +2,15 @@
 .performance-test-runs {
   border-collapse: collapse;
   width: 100%; }
+  .performance-test-runs tr:first-child th {
+    vertical-align: bottom; }
+  .performance-test-runs tr:nth-child(n+2) td {
+    padding: 5px;
+    white-space: nowrap; }
   .performance-test-runs tr:nth-child(even) {
     background-color: #eeeeee; }
   .performance-test-runs tr:hover {
     background-color: #ffffee; }
-  .performance-test-runs tr td {
-    padding: 5px; }
   .performance-test-runs tr:first-child {
     border-bottom: 1px solid black; }
     .performance-test-runs tr:first-child:hover {
