@@ -9,6 +9,7 @@ class PerformanceTestSuiteRun
   property :machine_id, Integer, :required => true
   property :suite_id,   Integer, :required => true
   property :changeset,  String,  :index => true
+  property :version,    String,  :index => true
   property :comment,    String
   property :changes,    Text
   property :created_at, DateTime

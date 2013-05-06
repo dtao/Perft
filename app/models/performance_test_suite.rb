@@ -14,6 +14,7 @@ class PerformanceTestSuite
   def process_client_results(data, machine)
     results   = data["results"]
     changeset = data["changeset"]
+    version   = data["version"]
     comment   = data["comment"]
     changes   = data["changes"]
     append    = data["append"]
@@ -33,6 +34,7 @@ class PerformanceTestSuite
       suite_run ||= self.runs.create({
         :machine   => machine,
         :changeset => changeset,
+        :version   => version,
         :comment   => comment,
         :changes   => changes
       })
