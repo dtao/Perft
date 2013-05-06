@@ -29,6 +29,9 @@ td.elapsed_seconds:after,
 td.average:after {
   content: " s";
   font-size: 90%; }
+td.elapsed_seconds:empty:after,
+td.average:empty:after {
+  content: ""; }
 
 .date,
 .time {

@@ -40,13 +40,15 @@ body {
     top: 60px;
     left: 0;
     right: 50%;
-    padding: 20px; }
+    padding: 20px;
+    overflow-x: auto; }
   body.split-view .supplemental {
     position: absolute;
     top: 60px;
     left: 50%;
     right: 0;
-    padding: 20px; }
+    padding: 20px;
+    overflow-x: auto; }
 
 h1, h2 {
   font-family: "Roboto Condensed", sans-serif; }
@@ -279,6 +281,9 @@ td.elapsed_seconds:after,
 td.average:after {
   content: " s";
   font-size: 90%; }
+td.elapsed_seconds:empty:after,
+td.average:empty:after {
+  content: ""; }
 
 .date,
 .time {
