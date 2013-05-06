@@ -14,7 +14,7 @@ Perft::App.controllers :suites do
     @suite_run = run_id == "latest" ?
       @suite.runs.first(:order => [:id.desc]) :
       @suite.runs.get(run_id.to_i)
-    @test_runs = @suite_run.test_runs(:order => [:elapsed_seconds.desc])
+    @test_runs = @suite_run.test_runs.sort { |x, y| y.average <=> x.average }
     render :"suites/run"
   end
 end
