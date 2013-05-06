@@ -1,8 +1,8 @@
 %section.machine
-  %h1= @machine.name
+  %h1
+    = @machine.name
+    = link_to("Back", "/")
 
   .properties
     .description= @machine.description
     .api-key= @machine.api_key
-
-  .actions= link_to("Back", "/")

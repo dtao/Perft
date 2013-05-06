@@ -1,5 +1,7 @@
 %section.project
-  %h1= @project.name
+  %h1
+    = @project.name
+    = link_to("Back", "/")
 
   - if @test_suites.any?
     %ol.performance-test-suites
@@ -13,5 +15,3 @@
         project: #{@project.id}
         machine: #{@machine.try(:id)}
         api_key: #{@machine.try(:api_key)}
-
-  .actions= link_to("Back", "/")

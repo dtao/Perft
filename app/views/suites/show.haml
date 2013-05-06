@@ -1,5 +1,7 @@
 %section.performance-test-suite
-  %h1= @suite.name
+  %h1
+    = @suite.name
+    = link_to("Back", "/projects/#{@suite.project_id}")
 
   %table.performance-test-suite-runs.render-to-spline-chart(data-value-columns="4" data-order="descending" data-limit="10")
     %tr
@@ -17,5 +19,3 @@
         %td.date= format_date(run.created_at)
         %td.time= format_time(run.created_at)
         %td.elapsed_seconds= format_decimal(run.total_elapsed_seconds)
-
-  .actions= link_to("Back", "/")

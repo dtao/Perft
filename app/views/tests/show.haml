@@ -13,7 +13,9 @@
     }
 
 %section.performance-test
-  %h1= @test.name
+  %h1
+    = @test.name
+    = link_to("Back", "/suites/#{@test.suite_id}/latest")
 
   %h2= @test.suite.name
 
@@ -33,8 +35,6 @@
         %td.time= format_time(suite_run.created_at)
         - @tags.each do |tag_key|
           %td.elapsed_seconds= format_decimal(runs[tag_key].try(:elapsed_seconds))
-
-  .actions= link_to("Back", "/suites/#{@test.suite_id}/latest")
 
 - content_for(:supplemental) do
   %textarea.code(data-mode="diff")=h @suite_run.changes
