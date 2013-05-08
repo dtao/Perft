@@ -5,6 +5,15 @@ Perft::App.controllers :suites do
     render :"suites/versions"
   end
 
+  get "/major/:id" do |id|
+    @suite = PerformanceTestSuite.get(id.to_i)
+    runs_array = @suite.runs(:order => [:id.desc]).to_a
+    @suite_runs = runs_array.each_with_index.top(10) do |run, i|
+      i == 0 ? 0 : (run.total_elapsed_seconds - runs_array[i - 1].total_elapsed_seconds).abs
+    end.map(&:first).sort_by(&:id).reverse
+    render :"suites/show"
+  end
+
   get "/:id" do |id|
     @suite = PerformanceTestSuite.get(id.to_i)
     @suite_runs = @suite.runs(:order => [:id.desc])
