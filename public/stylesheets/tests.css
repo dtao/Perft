@@ -3,9 +3,11 @@
   border-collapse: collapse;
   width: 100%; }
   .performance-test-runs tr:first-child th {
+    padding: 5px 1em;
     vertical-align: bottom; }
   .performance-test-runs tr:nth-child(n+2) td {
-    padding: 5px;
+    padding: 5px 1em;
+    vertical-align: top;
     white-space: nowrap; }
   .performance-test-runs tr:nth-child(even) {
     background-color: #eeeeee; }

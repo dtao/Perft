@@ -1,4 +1,10 @@
 Perft::App.controllers :suites do
+  get "/versions/:id" do |id|
+    @suite = PerformanceTestSuite.get(id.to_i)
+    @suite_runs = @suite.runs(:order => [:id.desc]).group_consecutive(&:version)
+    render :"suites/versions"
+  end
+
   get "/:id" do |id|
     @suite = PerformanceTestSuite.get(id.to_i)
     @suite_runs = @suite.runs(:order => [:id.desc])

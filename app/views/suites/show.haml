@@ -3,6 +3,10 @@
     = @suite.name
     = link_to("Back", "/projects/#{@suite.project_id}")
 
+  %h2
+    Viewing all changes |
+    = link_to("View grouped by version", "/suites/versions/#{@suite.id}")
+
   %table.performance-test-suite-runs.render-to-spline-chart(data-value-columns="2" data-order="descending" data-limit="10")
     %tr
       %th.changeset Changeset

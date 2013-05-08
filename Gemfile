@@ -11,6 +11,7 @@ gem "foreman"
 gem "rake"
 
 # Component requirements
+gem "bsearch"
 gem "json"
 gem "sass"
 gem "haml"

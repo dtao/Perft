@@ -8,9 +8,11 @@
   border-collapse: collapse;
   width: 100%; }
   .performance-test-suite-runs tr:first-child th {
+    padding: 5px 1em;
     vertical-align: bottom; }
   .performance-test-suite-runs tr:nth-child(n+2) td {
-    padding: 5px;
+    padding: 5px 1em;
+    vertical-align: top;
     white-space: nowrap; }
   .performance-test-suite-runs tr:nth-child(even) {
     background-color: #eeeeee; }
@@ -32,6 +34,12 @@
     text-overflow: ellipsis; }
     .performance-test-suite-runs .changeset a:empty:after {
       content: "(HEAD)"; }
+    .performance-test-suite-runs .changeset ul {
+      list-style: none;
+      padding-left: 0; }
+      .performance-test-suite-runs .changeset ul li {
+        color: #888888;
+        font-size: 75%; }
   .performance-test-suite-runs .elapsed-seconds {
     text-align: right; }
 
@@ -39,9 +47,11 @@
   border-collapse: collapse;
   width: 100%; }
   .test-runs tr:first-child th {
+    padding: 5px 1em;
     vertical-align: bottom; }
   .test-runs tr:nth-child(n+2) td {
-    padding: 5px;
+    padding: 5px 1em;
+    vertical-align: top;
     white-space: nowrap; }
   .test-runs tr:nth-child(even) {
     background-color: #eeeeee; }

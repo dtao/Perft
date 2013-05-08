@@ -1,0 +1,23 @@
+%section.performance-test-suite
+  %h1
+    = @suite.name
+    = link_to("Back", "/projects/#{@suite.project_id}")
+
+  %h2
+    Viewing changes grouped by version |
+    = link_to("View all changes", "/suites/#{@suite.id}")
+
+  %table.performance-test-suite-runs.render-to-spline-chart(data-value-columns="2" data-order="descending" data-limit="10")
+    %tr
+      %th.version Version
+      %th.changeset Changes
+      %th.elapsed-seconds Elapsed seconds
+
+    - @suite_runs.each do |version, runs|
+      %tr
+        %td.version= version
+        %td.changeset
+          %ul
+            - runs.reverse.each do |run|
+              %li= render_changeset(run)
+        %td.elapsed-seconds= format_decimal(runs.first.total_elapsed_seconds)
